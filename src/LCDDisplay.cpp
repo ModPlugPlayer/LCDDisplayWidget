@@ -25,7 +25,6 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     ui->secondDigit2->setFont(*SevenSegment);
     ui->minuteDigit1->setFont(*SevenSegment);
     ui->minuteDigit2->setFont(*SevenSegment);
-    ui->songTitle->setFont(*InterFont);
     ui->colon->setFont(*SevenSegment);
 }
 
@@ -40,14 +39,12 @@ void LCDDisplay::updateTime(int seconds)
 
 void LCDDisplay::setSongTitle(QString songTitle)
 {
-    ui->songTitle->setText(songTitle);
+    ui->titleArea->setSongTitle(songTitle);
 }
 
 void LCDDisplay::setSongDuration(size_t songDurationSeconds)
 {
-    QString text = QStringLiteral("%1:%2s").arg(songDurationSeconds/60, 2, 10, QLatin1Char('0')).arg(songDurationSeconds%60, 2, 10, QLatin1Char('0'));
-    //text.sprintf("%02d:%02ds", songDurationSeconds/60, songDurationSeconds%60);
-    ui->totalTime->setText(text);
+    ui->titleArea->setTotalTime(songDurationSeconds);
 }
 
 LCDDisplay::~LCDDisplay()
