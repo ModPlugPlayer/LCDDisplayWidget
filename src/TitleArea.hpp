@@ -15,7 +15,7 @@ public:
     void setSongTitle(QString &songTitle);
     ~TitleArea();
 
-    void setTotalTime(size_t songDurationSeconds);
+    void setSongDuration(size_t songDurationSeconds);
 private:
     Ui::TitleArea *ui;
     QFont *SevenSegment;

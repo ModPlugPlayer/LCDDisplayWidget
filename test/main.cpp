@@ -12,10 +12,13 @@ You should have received a copy of the GNU Lesser General Public License along w
 //#include "PlayListWindow.hpp"
 #include "ControlWindow.hpp"
 #include <QApplication>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QFontDatabase::addApplicationFont(":/Fonts/Seven Segment.ttf");
+    QFontDatabase::addApplicationFont(":/Fonts/Inter.ttf");
     //PlayListWindow w;
     ControlWindow c;
     c.show();

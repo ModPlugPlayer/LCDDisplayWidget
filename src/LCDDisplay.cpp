@@ -44,7 +44,7 @@ void LCDDisplay::setSongTitle(QString songTitle)
 
 void LCDDisplay::setSongDuration(size_t songDurationSeconds)
 {
-    ui->titleArea->setTotalTime(songDurationSeconds);
+    ui->titleArea->setSongDuration(songDurationSeconds);
 }
 
 LCDDisplay::~LCDDisplay()
