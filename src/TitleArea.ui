@@ -36,7 +36,7 @@
     <widget class="QFrame" name="titleFrame">
      <property name="styleSheet">
       <string notr="true">#titleFrame {
-margin-top: 10%;
+margin-top: 8%;
 padding-top: -10%;
 border-color: rgb(0, 0, 0);
 border: 1px solid;
@@ -99,7 +99,7 @@ font-size: 2ex;
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QLabel" name="totalTime_4">
+       <widget class="QLabel" name="song">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -112,7 +112,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>SONG</string>
@@ -139,7 +140,7 @@ font-size: 2ex;
        </spacer>
       </item>
       <item row="0" column="10">
-       <widget class="QLabel" name="totalTime_7">
+       <widget class="QLabel" name="s">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -152,7 +153,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>s</string>
@@ -163,7 +165,7 @@ font-size: 2ex;
        </widget>
       </item>
       <item row="0" column="4">
-       <widget class="QLabel" name="totalTime_5">
+       <widget class="QLabel" name="slash">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -176,7 +178,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string> of </string>
@@ -187,7 +190,7 @@ font-size: 2ex;
        </widget>
       </item>
       <item row="0" column="5">
-       <widget class="QLabel" name="totalTime_6">
+       <widget class="QLabel" name="subSongAmount">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -200,7 +203,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>000</string>
@@ -224,7 +228,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>00:00</string>
@@ -248,7 +253,7 @@ font-size: 2ex;
        </spacer>
       </item>
       <item row="0" column="3">
-       <widget class="QLabel" name="totalTime_3">
+       <widget class="QLabel" name="subSong">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -261,7 +266,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>000</string>
@@ -272,7 +278,7 @@ font-size: 2ex;
        </widget>
       </item>
       <item row="0" column="7">
-       <widget class="QLabel" name="totalTime_2">
+       <widget class="QLabel" name="pattern">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -285,7 +291,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 12px;</string>
+         <string notr="true">font-size: 11px;
+margin-top: 0px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
          <string>000/000</string>
@@ -312,7 +319,7 @@ font-size: 2ex;
        </spacer>
       </item>
       <item row="1" column="0" colspan="12">
-       <widget class="QLabel" name="songTitle">
+       <widget class="QLabel" name="title">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -327,7 +334,8 @@ font-size: 2ex;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font-size: 2em;</string>
+         <string notr="true">font-size: 2em;
+margin-top: -2px;</string>
         </property>
         <property name="text">
          <string>W E L C O M E</string>

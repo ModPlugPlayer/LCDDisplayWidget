@@ -1,5 +1,5 @@
 /*
-TitleArea class declarations of ModPlug Player
+PropertiesArea class definitions of ModPlug Player
 Copyright (C) 2024 Volkan Orhan
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -9,26 +9,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#include "PropertiesArea.hpp"
+#include "ui_PropertiesArea.h"
 
-#include <QWidget>
-
-namespace Ui {
-class TitleArea;
+PropertiesArea::PropertiesArea(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::PropertiesArea)
+{
+    ui->setupUi(this);
 }
 
-class TitleArea : public QWidget
+PropertiesArea::~PropertiesArea()
 {
-    Q_OBJECT
-
-public:
-    explicit TitleArea(QWidget *parent = nullptr);
-    void setSongTitle(QString &songTitle);
-    ~TitleArea();
-
-    void setSongDuration(size_t songDurationSeconds);
-private:
-    Ui::TitleArea *ui;
-    QFont *SevenSegment;
-    QFont *InterFont;
-};
+    delete ui;
+}

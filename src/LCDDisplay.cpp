@@ -21,20 +21,11 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     ui->setupUi(this);
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
     InterFont = new QFont("Inter", 20, QFont::Normal);
-    ui->secondDigit1->setFont(*SevenSegment);
-    ui->secondDigit2->setFont(*SevenSegment);
-    ui->minuteDigit1->setFont(*SevenSegment);
-    ui->minuteDigit2->setFont(*SevenSegment);
-    ui->colon->setFont(*SevenSegment);
 }
 
 void LCDDisplay::updateTime(int seconds)
 {
-    ui->minuteDigit1->setText(QString::number(seconds/600));
-    ui->minuteDigit2->setText(QString::number(seconds/60));
-    ui->secondDigit1->setText(QString::number((seconds%60)/10));
-    ui->secondDigit2->setText(QString::number((seconds%60)%10));
-
+    ui->timeArea->updateTime(seconds);
 }
 
 void LCDDisplay::setSongTitle(QString songTitle)
