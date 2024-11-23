@@ -29,6 +29,68 @@
    <property name="spacing">
     <number>0</number>
    </property>
+   <item row="1" column="1">
+    <widget class="QLabel" name="minuteDigit2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+margin-top: -3px; /*Should be negative or zero*/</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="secondDigit2">
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+margin-top: -3px; /*Should be negative or zero*/</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="min">
      <property name="maximumSize">
@@ -43,7 +105,8 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 11px;</string>
+      <string notr="true">font-size: 11px;
+margin-top: -1px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string>MIN</string>
@@ -52,34 +115,10 @@
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
      <property name="margin">
-      <number>1</number>
+      <number>0</number>
      </property>
-    </widget>
-   </item>
-   <item row="0" column="3" colspan="2">
-    <widget class="QLabel" name="sec">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>15</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 11px;</string>
-     </property>
-     <property name="text">
-      <string>SEC</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
-     </property>
-     <property name="margin">
-      <number>1</number>
+     <property name="indent">
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -103,43 +142,17 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 26px;</string>
+      <string notr="true">font-size: 26px;
+margin-top: -3px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="minuteDigit2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>20</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 26px;</string>
-     </property>
-     <property name="text">
-      <string>0</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     <property name="indent">
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -152,13 +165,45 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 26px;</string>
+      <string notr="true">font-size: 26px;
+margin-top: -3px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string>:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="2">
+    <widget class="QLabel" name="sec">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>15</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 11px;
+margin-top: -1px; /*Should be negative or zero*/</string>
+     </property>
+     <property name="text">
+      <string>SEC</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <property name="indent">
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -176,7 +221,8 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 26px;</string>
+      <string notr="true">font-size: 26px;
+margin-top: -3px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -184,29 +230,8 @@
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="secondDigit2">
-     <property name="maximumSize">
-      <size>
-       <width>20</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 26px;</string>
-     </property>
-     <property name="text">
-      <string>0</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     <property name="indent">
+      <number>0</number>
      </property>
     </widget>
    </item>
