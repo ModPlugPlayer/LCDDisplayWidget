@@ -17,6 +17,12 @@ TitleArea::TitleArea(QWidget *parent)
     , ui(new Ui::TitleArea)
 {
     ui->setupUi(this);
+
+    #ifdef Q_OS_MACOS
+        //Makes this component seem under the transparent titlebar correctly
+        setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea, false);
+    #endif
+
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
     InterFont = new QFont("Inter", 20, QFont::Normal);
     ui->title->setFont(*InterFont);
