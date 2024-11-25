@@ -39,6 +39,11 @@ void LCDDisplay::setSongTitle(QString songTitle)
     ui->titleArea->setSongTitle(songTitle);
 }
 
+void LCDDisplay::setRepeatState(ModPlugPlayer::RepeatState repeatState)
+{
+    ui->propertiesArea->setRepeatState(repeatState);
+}
+
 void LCDDisplay::setSongDuration(size_t songDurationSeconds)
 {
     ui->titleArea->setSongDuration(songDurationSeconds);

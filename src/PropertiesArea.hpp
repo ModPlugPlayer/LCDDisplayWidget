@@ -9,11 +9,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef PROPERTIESAREA_HPP
-#define PROPERTIESAREA_HPP
+#pragma once
 
 #include <QWidget>
-
+#include <APIStructures.hpp>
 namespace Ui {
 class PropertiesArea;
 }
@@ -24,10 +23,9 @@ class PropertiesArea : public QWidget
 
 public:
     explicit PropertiesArea(QWidget *parent = nullptr);
+    void setRepeatState(ModPlugPlayer::RepeatState repeatState);
     ~PropertiesArea();
 
 private:
     Ui::PropertiesArea *ui;
 };
-
-#endif // PROPERTIESAREA_HPP

@@ -13,6 +13,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 #include <QWidget>
 #include "TextColorProperties.hpp"
+#include <APIStructures.hpp>
 
 namespace Ui {
 class LCDDisplay;
@@ -26,6 +27,7 @@ public:
     explicit LCDDisplay(QWidget *parent = nullptr);
     void updateTime(int seconds);
     void setSongTitle(QString songTitle);
+    void setRepeatState(ModPlugPlayer::RepeatState repeatState);
     void setSongDuration(size_t songDurationSeconds);
     ~LCDDisplay();
 

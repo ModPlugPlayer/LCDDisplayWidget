@@ -19,6 +19,21 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     ui->setupUi(this);
 }
 
+void PropertiesArea::setRepeatState(ModPlugPlayer::RepeatState repeatState)
+{
+    switch(repeatState) {
+    case ModPlugPlayer::RepeatState::None:
+        ui->repeatState->setText("");
+    break;
+    case ModPlugPlayer::RepeatState::SingleTrack:
+        ui->repeatState->setText("Repeat Track");
+    break;
+    case ModPlugPlayer::RepeatState::PlayList:
+        ui->repeatState->setText("Repeat PlayList");
+    break;
+    }
+}
+
 PropertiesArea::~PropertiesArea()
 {
     delete ui;
