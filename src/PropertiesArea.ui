@@ -71,7 +71,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="repeatState">
+    <widget class="ClickableLabel" name="repeatState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -118,12 +118,24 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="eqState">
+    <widget class="ClickableLabel" name="eqState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>15</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>15</width>
+       <height>10</height>
+      </size>
      </property>
      <property name="font">
       <font>
@@ -159,7 +171,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="agcState">
+    <widget class="ClickableLabel" name="agcState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -200,7 +212,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="xBassState">
+    <widget class="ClickableLabel" name="xBassState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -241,7 +253,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="surroundState">
+    <widget class="ClickableLabel" name="surroundState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -282,7 +294,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="reverbState">
+    <widget class="ClickableLabel" name="reverbState">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -323,7 +335,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="interpolationMode">
+    <widget class="ClickableLabel" name="interpolationMode">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -350,6 +362,13 @@ margin-top: -2px;</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>ClickableLabel.hpp</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

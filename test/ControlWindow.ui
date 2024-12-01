@@ -164,7 +164,7 @@
       <string notr="true">color: blue;</string>
      </property>
      <property name="text">
-      <string>Repeat None</string>
+      <string>Repeat</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>

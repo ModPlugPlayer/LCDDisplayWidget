@@ -14,13 +14,19 @@ You should have received a copy of the GNU General Public License along with thi
 
 PropertiesArea::PropertiesArea(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::PropertiesArea)
-{
+    , ui(new Ui::PropertiesArea) {
     ui->setupUi(this);
+    connect(ui->repeatState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onRepeatDoubleClicked);
+    connect(ui->eqState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onEqDoubleClicked);
+    connect(ui->agcState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onAGCDoubleClicked);
+    connect(ui->xBassState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onXBassDoubleClicked);
+    connect(ui->surroundState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onSurroundDoubleClicked);
+    connect(ui->reverbState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onReverbDoubleClicked);
+    connect(ui->interpolationMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationDoubleClicked);
 }
 
-void PropertiesArea::setRepeatState(ModPlugPlayer::RepeatState repeatState)
-{
+void PropertiesArea::setRepeatState(ModPlugPlayer::RepeatState repeatState) {
+    this->repeatState = repeatState;
     switch(repeatState) {
     case ModPlugPlayer::RepeatState::None:
         ui->repeatState->setText("");
@@ -34,7 +40,100 @@ void PropertiesArea::setRepeatState(ModPlugPlayer::RepeatState repeatState)
     }
 }
 
-PropertiesArea::~PropertiesArea()
-{
+void PropertiesArea::setEqState(bool enabled) {
+    eqState = enabled;
+    if(enabled) {
+        ui->eqState->setText("EQ");
+    }
+    else {
+        ui->eqState->setText("");
+    }
+}
+
+void PropertiesArea::setAGCState(bool enabled) {
+    agcState = enabled;
+    if(enabled)
+        ui->eqState->setText("AGC");
+    else
+        ui->eqState->setText("");
+}
+
+void PropertiesArea::setXBassState(bool enabled) {
+    xBassState = enabled;
+    if(enabled)
+        ui->xBassState->setText("XBass");
+    else
+        ui->xBassState->setText("");
+}
+
+void PropertiesArea::setSurroundState(bool enabled) {
+    surroundState = enabled;
+    if(enabled)
+        ui->surroundState->setText("Surround");
+    else
+        ui->surroundState->setText("");
+}
+
+void PropertiesArea::setReverbState(bool enabled) {
+    reverbState = enabled;
+    if(enabled)
+        ui->reverbState->setText("Reverb");
+    else
+        ui->reverbState->setText("");
+}
+
+void PropertiesArea::setInterpolationState(ModPlugPlayer::InterpolationState interpolationState) {
+    this->interpolationState = interpolationState;
+    switch(interpolationState) {
+        case ModPlugPlayer::InterpolationState::NoInterpolation:
+            ui->interpolationMode->setText("No Interpolation");
+            break;
+        case ModPlugPlayer::InterpolationState::Linear:
+            ui->interpolationMode->setText("Linear");
+            break;
+        case ModPlugPlayer::InterpolationState::Cubic:
+            ui->interpolationMode->setText("Cubic");
+            break;
+        case ModPlugPlayer::InterpolationState::Sinc:
+            ui->interpolationMode->setText("HQ");
+            break;
+        case ModPlugPlayer::InterpolationState::SincPlusLowPass:
+            ui->interpolationMode->setText("HQ+");
+            break;
+    }
+}
+
+PropertiesArea::~PropertiesArea() {
     delete ui;
+}
+
+void PropertiesArea::onRepeatDoubleClicked()
+{
+    ModPlugPlayer::RepeatState currentRepeatState = this->repeatState;
+    emit repeatStateChangeRequested(currentRepeatState++);
+}
+
+void PropertiesArea::onEqDoubleClicked() {
+    emit eqStateChangeRequested(!eqState);
+}
+
+void PropertiesArea::onAGCDoubleClicked() {
+    emit agcStateChangeRequested(!agcState);
+}
+
+void PropertiesArea::onXBassDoubleClicked() {
+    emit xBassStateChangeRequested(!xBassState);
+}
+
+void PropertiesArea::onSurroundDoubleClicked() {
+    emit surroundStateChangeRequested(!surroundState);
+}
+
+void PropertiesArea::onReverbDoubleClicked() {
+    emit reverbStateChangeRequested(!reverbState);
+}
+
+void PropertiesArea::onInterpolationDoubleClicked() {
+    ModPlugPlayer::InterpolationState currentInterpolationState = this->interpolationState;
+    emit interpolationStateChangeRequested(currentInterpolationState++);
 }

@@ -47,6 +47,7 @@ signals:
     void next() override;
     void changeVolume(const int volume) override;
     void changeRepeat(const ModPlugPlayer::RepeatState repeat) override;
+    void changeEq(const bool activated) override;
     void setAlwaysOnTop(const bool alwaysOnTop) override;
     void hideTitleBar(const bool hide) override;
     void snapToViewPort(const bool toBeSnappedToViewPort) override;
@@ -71,6 +72,7 @@ public slots:
     void onChangeVolume(const int volume) override;
     void onScrubTime(const int position) override;
     void onChangeRepeat(const ModPlugPlayer::RepeatState repeat) override;
+    void onChangeEq(const bool activated) override;
     void onSetAlwaysOnTop(const bool alwaysOnTop) override;
     void onHideTitleBar(const bool hide) override;
     void onSetSnapToViewPort(const bool snapToViewPort) override;
@@ -92,8 +94,10 @@ private slots:
 private:
     Ui::ControlWindow *ui;
     RepeatState repeatState = RepeatState::None;
+    bool eqState = false;
     PlayingStatus playingStatus = PlayingStatus::Stopped;
-    void toggleRepeat();
+    void changeRepeatState(ModPlugPlayer::RepeatState repeatState);
     PlayingMode playingMode = PlayingMode::SingleTrack;
+    void setRepeatState(RepeatState repeatState);
 };
 

@@ -31,6 +31,23 @@ public:
     void setSongDuration(size_t songDurationSeconds);
     ~LCDDisplay();
 
+signals:
+    void eqStateChangeRequested(bool activated);
+    void agcStateChangeRequested(bool activated);
+    void surroundStateChangeRequested(bool activated);
+    void xBassStateChangeRequested(bool activated);
+    void reverbStateChangeRequested(bool activated);
+    void repeatStateChangeRequested(ModPlugPlayer::RepeatState repeatState);
+    void interpolationStateChangeRequested(ModPlugPlayer::InterpolationState interpolationState);
+
+public slots:
+    void onSurroundStateChanged(bool activated);
+    void onEqStateChanged(bool activated);
+    void onAGCStateChanged(bool activated);
+    void onXBassStateChanged(bool activated);
+    void onReverbStateChanged(bool activated);
+    void onRepeatStateChanged(ModPlugPlayer::RepeatState repeatState);
+    void onInterpolationStateChanged(ModPlugPlayer::InterpolationState interpolationState);
 private:
     Ui::LCDDisplay *ui;
     QFont *SevenSegment;

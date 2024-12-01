@@ -27,6 +27,9 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
 
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
     InterFont = new QFont("Inter", 20, QFont::Normal);
+    connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::repeatStateChangeRequested, this, &LCDDisplay::repeatStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::surroundStateChangeRequested, this, &LCDDisplay::surroundStateChangeRequested);
 }
 
 void LCDDisplay::updateTime(int seconds)
@@ -49,15 +52,41 @@ void LCDDisplay::setSongDuration(size_t songDurationSeconds)
     ui->titleArea->setSongDuration(songDurationSeconds);
 }
 
-LCDDisplay::~LCDDisplay()
-{
+LCDDisplay::~LCDDisplay() {
     delete SevenSegment;
     delete InterFont;
     delete ui;
 }
 
-void LCDDisplay::refreshStyleSheet()
-{
+void LCDDisplay::onEqStateChanged(bool activated) {
+    ui->propertiesArea->setEqState(activated);
+}
+
+void LCDDisplay::onAGCStateChanged(bool activated) {
+    ui->propertiesArea->setAGCState(activated);
+}
+
+void LCDDisplay::onSurroundStateChanged(bool activated) {
+    ui->propertiesArea->setSurroundState(activated);
+}
+
+void LCDDisplay::onXBassStateChanged(bool activated) {
+    ui->propertiesArea->setXBassState(activated);
+}
+
+void LCDDisplay::onReverbStateChanged(bool activated) {
+    ui->propertiesArea->setReverbState(activated);
+}
+
+void LCDDisplay::onRepeatStateChanged(ModPlugPlayer::RepeatState repeatState) {
+    ui->propertiesArea->setRepeatState(repeatState);
+}
+
+void LCDDisplay::onInterpolationStateChanged(ModPlugPlayer::InterpolationState interpolationState) {
+    ui->propertiesArea->setInterpolationState(interpolationState);
+}
+
+void LCDDisplay::refreshStyleSheet() {
     QString backgroundStyle = QString("background-color:%1;").arg(backgroundColor.hex().c_str());
     QString textStyle = QString("color:%1;").arg(textColor.hex().c_str());
     QString style = QString("background-color:%1; color:%2;").arg(backgroundColor.hex().c_str(), textColor.hex().c_str());

@@ -25,6 +25,10 @@ ControlWindow::ControlWindow(QWidget *parent) :
     QObject::connect(this, qOverload<>(&ControlWindow::stop), this, qOverload<>(&ControlWindow::onStop));
     QObject::connect(this, &ControlWindow::previous, this, &ControlWindow::onPrevious);
     QObject::connect(this, &ControlWindow::next, this, &ControlWindow::onNext);
+    connect(this, &ControlWindow::changeRepeat, ui->display, &LCDDisplay::onRepeatStateChanged);
+    connect(this, &ControlWindow::changeEq, ui->display, &LCDDisplay::onEqStateChanged);
+    connect(ui->display, &LCDDisplay::repeatStateChangeRequested, this, &ControlWindow::changeRepeatState);
+    connect(ui->display, &LCDDisplay::eqStateChangeRequested, this, &ControlWindow::onChangeEq);
     ui->playlistButton->click();
 }
 
@@ -145,6 +149,12 @@ void ControlWindow::onChangeRepeat(RepeatState repeat) {
     repeatState = repeat;
 }
 
+void ControlWindow::onChangeEq(const bool activated)
+{
+    eqState = activated;
+    emit changeEq(activated);
+}
+
 void ControlWindow::onSetAlwaysOnTop(bool alwaysOnTop) {
 
 }
@@ -191,13 +201,9 @@ void ControlWindow::on_stopButton_clicked() {
 }
 
 void ControlWindow::on_repeatButton_clicked() {
-    toggleRepeat();
-    if(repeatState == RepeatState::None)
-        ui->repeatButton->setText("Repeat\nNone");
-    if(repeatState == RepeatState::SingleTrack)
-        ui->repeatButton->setText("Repeat\nSong");
-    if(repeatState == RepeatState::PlayList)
-        ui->repeatButton->setText("Repeat\nPlaylist");
+    RepeatState repeat = repeatState;
+
+    changeRepeatState(repeat++);
 }
 
 void ControlWindow::on_playlistButton_clicked() {
@@ -209,22 +215,12 @@ void ControlWindow::onPlayListEditorIsHidden() {
     ui->playlistButton->setStyleSheet("color: blue;");
 }
 
-void ControlWindow::toggleRepeat() {
-    RepeatState repeat = RepeatState::None;
-
-    if(repeatState == RepeatState::None)
-        repeat = RepeatState::SingleTrack;
-    else
-        if(repeatState == RepeatState::SingleTrack)
-            repeat = RepeatState::PlayList;
-    else
-        if(repeatState == RepeatState::PlayList)
-            repeat = RepeatState::None;
-
-    emit changeRepeat(repeat);
-}
-
 void ControlWindow::on_openButton_clicked() {
 
+}
+
+void ControlWindow::changeRepeatState(RepeatState repeatState)
+{
+    emit changeRepeat(repeatState++);
 }
 

@@ -13,6 +13,8 @@ You should have received a copy of the GNU General Public License along with thi
 
 #include <QWidget>
 #include <APIStructures.hpp>
+#include <QMouseEvent>
+
 namespace Ui {
 class PropertiesArea;
 }
@@ -24,8 +26,33 @@ class PropertiesArea : public QWidget
 public:
     explicit PropertiesArea(QWidget *parent = nullptr);
     void setRepeatState(ModPlugPlayer::RepeatState repeatState);
+    void setEqState(bool enabled);
+    void setAGCState(bool enabled);
+    void setXBassState(bool enabled);
+    void setSurroundState(bool enabled);
+    void setReverbState(bool enabled);
+    void setInterpolationState(ModPlugPlayer::InterpolationState interpolationState);
     ~PropertiesArea();
+
+signals:
+    void eqStateChangeRequested(bool activated);
+    void agcStateChangeRequested(bool activated);
+    void surroundStateChangeRequested(bool activated);
+    void xBassStateChangeRequested(bool activated);
+    void reverbStateChangeRequested(bool activated);
+    void repeatStateChangeRequested(ModPlugPlayer::RepeatState repeatState);
+    void interpolationStateChangeRequested(ModPlugPlayer::InterpolationState interpolationState);
 
 private:
     Ui::PropertiesArea *ui;
+    void onRepeatDoubleClicked();
+    void onEqDoubleClicked();
+    void onAGCDoubleClicked();
+    void onXBassDoubleClicked();
+    void onSurroundDoubleClicked();
+    void onReverbDoubleClicked();
+    void onInterpolationDoubleClicked();
+    bool eqState = false, agcState = false, xBassState = false, surroundState = false, reverbState = false;
+    ModPlugPlayer::RepeatState repeatState = ModPlugPlayer::RepeatState::None;
+    ModPlugPlayer::InterpolationState interpolationState = ModPlugPlayer::InterpolationState::NoInterpolation;
 };
