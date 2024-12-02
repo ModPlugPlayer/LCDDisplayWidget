@@ -28,7 +28,7 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
     InterFont = new QFont("Inter", 20, QFont::Normal);
     connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::repeatStateChangeRequested, this, &LCDDisplay::repeatStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::repeatModeChangeRequested, this, &LCDDisplay::repeatModeChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::surroundStateChangeRequested, this, &LCDDisplay::surroundStateChangeRequested);
 }
 
@@ -42,9 +42,9 @@ void LCDDisplay::setSongTitle(QString songTitle)
     ui->titleArea->setSongTitle(songTitle);
 }
 
-void LCDDisplay::setRepeatState(ModPlugPlayer::RepeatState repeatState)
+void LCDDisplay::setRepeatMode(ModPlugPlayer::RepeatMode repeatMode)
 {
-    ui->propertiesArea->setRepeatState(repeatState);
+    ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
 void LCDDisplay::setSongDuration(size_t songDurationSeconds)
@@ -78,12 +78,12 @@ void LCDDisplay::onReverbStateChanged(bool activated) {
     ui->propertiesArea->setReverbState(activated);
 }
 
-void LCDDisplay::onRepeatStateChanged(ModPlugPlayer::RepeatState repeatState) {
-    ui->propertiesArea->setRepeatState(repeatState);
+void LCDDisplay::onRepeatModeChanged(ModPlugPlayer::RepeatMode repeatMode) {
+    ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::onInterpolationStateChanged(ModPlugPlayer::InterpolationState interpolationState) {
-    ui->propertiesArea->setInterpolationState(interpolationState);
+void LCDDisplay::onInterpolationModeChanged(ModPlugPlayer::InterpolationMode interpolationMode) {
+    ui->propertiesArea->setInterpolationMode(interpolationMode);
 }
 
 void LCDDisplay::refreshStyleSheet() {

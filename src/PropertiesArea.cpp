@@ -16,26 +16,26 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PropertiesArea) {
     ui->setupUi(this);
-    connect(ui->repeatState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onRepeatDoubleClicked);
+    connect(ui->repeatMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onRepeatDoubleClicked);
     connect(ui->eqState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onEqDoubleClicked);
     connect(ui->agcState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onAGCDoubleClicked);
     connect(ui->xBassState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onXBassDoubleClicked);
     connect(ui->surroundState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onSurroundDoubleClicked);
     connect(ui->reverbState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onReverbDoubleClicked);
-    connect(ui->interpolationMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationDoubleClicked);
+    connect(ui->interpolationMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationModeDoubleClicked);
 }
 
-void PropertiesArea::setRepeatState(ModPlugPlayer::RepeatState repeatState) {
-    this->repeatState = repeatState;
-    switch(repeatState) {
-    case ModPlugPlayer::RepeatState::None:
-        ui->repeatState->setText("");
+void PropertiesArea::setRepeatMode(ModPlugPlayer::RepeatMode repeatMode) {
+    this->repeatMode = repeatMode;
+    switch(repeatMode) {
+    case ModPlugPlayer::RepeatMode::None:
+        ui->repeatMode->setText("");
     break;
-    case ModPlugPlayer::RepeatState::SingleTrack:
-        ui->repeatState->setText("Repeat Track");
+    case ModPlugPlayer::RepeatMode::SingleTrack:
+        ui->repeatMode->setText("Repeat Track");
     break;
-    case ModPlugPlayer::RepeatState::PlayList:
-        ui->repeatState->setText("Repeat PlayList");
+    case ModPlugPlayer::RepeatMode::PlayList:
+        ui->repeatMode->setText("Repeat PlayList");
     break;
     }
 }
@@ -82,22 +82,22 @@ void PropertiesArea::setReverbState(bool enabled) {
         ui->reverbState->setText("");
 }
 
-void PropertiesArea::setInterpolationState(ModPlugPlayer::InterpolationState interpolationState) {
-    this->interpolationState = interpolationState;
-    switch(interpolationState) {
-        case ModPlugPlayer::InterpolationState::NoInterpolation:
+void PropertiesArea::setInterpolationMode(ModPlugPlayer::InterpolationMode interpolationMode) {
+    this->interpolationMode = interpolationMode;
+    switch(interpolationMode) {
+        case ModPlugPlayer::InterpolationMode::NoInterpolation:
             ui->interpolationMode->setText("No Interpolation");
             break;
-        case ModPlugPlayer::InterpolationState::Linear:
+        case ModPlugPlayer::InterpolationMode::Linear:
             ui->interpolationMode->setText("Linear");
             break;
-        case ModPlugPlayer::InterpolationState::Cubic:
+        case ModPlugPlayer::InterpolationMode::Cubic:
             ui->interpolationMode->setText("Cubic");
             break;
-        case ModPlugPlayer::InterpolationState::Sinc:
+        case ModPlugPlayer::InterpolationMode::Sinc:
             ui->interpolationMode->setText("HQ");
             break;
-        case ModPlugPlayer::InterpolationState::SincPlusLowPass:
+        case ModPlugPlayer::InterpolationMode::SincPlusLowPass:
             ui->interpolationMode->setText("HQ+");
             break;
     }
@@ -109,8 +109,8 @@ PropertiesArea::~PropertiesArea() {
 
 void PropertiesArea::onRepeatDoubleClicked()
 {
-    ModPlugPlayer::RepeatState currentRepeatState = this->repeatState;
-    emit repeatStateChangeRequested(currentRepeatState++);
+    ModPlugPlayer::RepeatMode currentRepeatMode = this->repeatMode;
+    emit repeatModeChangeRequested(currentRepeatMode++);
 }
 
 void PropertiesArea::onEqDoubleClicked() {
@@ -133,7 +133,7 @@ void PropertiesArea::onReverbDoubleClicked() {
     emit reverbStateChangeRequested(!reverbState);
 }
 
-void PropertiesArea::onInterpolationDoubleClicked() {
-    ModPlugPlayer::InterpolationState currentInterpolationState = this->interpolationState;
-    emit interpolationStateChangeRequested(currentInterpolationState++);
+void PropertiesArea::onInterpolationModeDoubleClicked() {
+    ModPlugPlayer::InterpolationMode currentInterpolationMode = this->interpolationMode;
+    emit interpolationModeChangeRequested(currentInterpolationMode++);
 }

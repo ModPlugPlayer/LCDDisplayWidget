@@ -27,7 +27,7 @@ public:
     explicit LCDDisplay(QWidget *parent = nullptr);
     void updateTime(int seconds);
     void setSongTitle(QString songTitle);
-    void setRepeatState(ModPlugPlayer::RepeatState repeatState);
+    void setRepeatMode(ModPlugPlayer::RepeatMode repeatMode);
     void setSongDuration(size_t songDurationSeconds);
     ~LCDDisplay();
 
@@ -37,8 +37,8 @@ signals:
     void surroundStateChangeRequested(bool activated);
     void xBassStateChangeRequested(bool activated);
     void reverbStateChangeRequested(bool activated);
-    void repeatStateChangeRequested(ModPlugPlayer::RepeatState repeatState);
-    void interpolationStateChangeRequested(ModPlugPlayer::InterpolationState interpolationState);
+    void repeatModeChangeRequested(ModPlugPlayer::RepeatMode repeatMode);
+    void interpolationModeChangeRequested(ModPlugPlayer::InterpolationMode interpolationMode);
 
 public slots:
     void onSurroundStateChanged(bool activated);
@@ -46,8 +46,8 @@ public slots:
     void onAGCStateChanged(bool activated);
     void onXBassStateChanged(bool activated);
     void onReverbStateChanged(bool activated);
-    void onRepeatStateChanged(ModPlugPlayer::RepeatState repeatState);
-    void onInterpolationStateChanged(ModPlugPlayer::InterpolationState interpolationState);
+    void onRepeatModeChanged(ModPlugPlayer::RepeatMode repeatMode);
+    void onInterpolationModeChanged(ModPlugPlayer::InterpolationMode interpolationMode);
 private:
     Ui::LCDDisplay *ui;
     QFont *SevenSegment;

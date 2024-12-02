@@ -71,7 +71,7 @@ margin-top: -2px;</string>
     </spacer>
    </item>
    <item>
-    <widget class="ClickableLabel" name="repeatState">
+    <widget class="ClickableLabel" name="repeatMode">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>

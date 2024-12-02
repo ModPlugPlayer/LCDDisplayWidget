@@ -25,13 +25,13 @@ class PropertiesArea : public QWidget
 
 public:
     explicit PropertiesArea(QWidget *parent = nullptr);
-    void setRepeatState(ModPlugPlayer::RepeatState repeatState);
+    void setRepeatMode(ModPlugPlayer::RepeatMode repeatMode);
     void setEqState(bool enabled);
     void setAGCState(bool enabled);
     void setXBassState(bool enabled);
     void setSurroundState(bool enabled);
     void setReverbState(bool enabled);
-    void setInterpolationState(ModPlugPlayer::InterpolationState interpolationState);
+    void setInterpolationMode(ModPlugPlayer::InterpolationMode interpolationMode);
     ~PropertiesArea();
 
 signals:
@@ -40,8 +40,8 @@ signals:
     void surroundStateChangeRequested(bool activated);
     void xBassStateChangeRequested(bool activated);
     void reverbStateChangeRequested(bool activated);
-    void repeatStateChangeRequested(ModPlugPlayer::RepeatState repeatState);
-    void interpolationStateChangeRequested(ModPlugPlayer::InterpolationState interpolationState);
+    void repeatModeChangeRequested(ModPlugPlayer::RepeatMode repeatMode);
+    void interpolationModeChangeRequested(ModPlugPlayer::InterpolationMode interpolationMode);
 
 private:
     Ui::PropertiesArea *ui;
@@ -51,8 +51,8 @@ private:
     void onXBassDoubleClicked();
     void onSurroundDoubleClicked();
     void onReverbDoubleClicked();
-    void onInterpolationDoubleClicked();
+    void onInterpolationModeDoubleClicked();
     bool eqState = false, agcState = false, xBassState = false, surroundState = false, reverbState = false;
-    ModPlugPlayer::RepeatState repeatState = ModPlugPlayer::RepeatState::None;
-    ModPlugPlayer::InterpolationState interpolationState = ModPlugPlayer::InterpolationState::NoInterpolation;
+    ModPlugPlayer::RepeatMode repeatMode = ModPlugPlayer::RepeatMode::None;
+    ModPlugPlayer::InterpolationMode interpolationMode = ModPlugPlayer::InterpolationMode::NoInterpolation;
 };
