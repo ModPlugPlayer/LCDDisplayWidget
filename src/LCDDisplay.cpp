@@ -27,9 +27,13 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
 
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
     InterFont = new QFont("Inter", 20, QFont::Normal);
-    connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::repeatModeChangeRequested, this, &LCDDisplay::repeatModeChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::agcStateChangeRequested, this, &LCDDisplay::agcStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::xBassStateChangeRequested, this, &LCDDisplay::xBassStateChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::surroundStateChangeRequested, this, &LCDDisplay::surroundStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::reverbStateChangeRequested, this, &LCDDisplay::reverbStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::interpolationModeChangeRequested, this, &LCDDisplay::interpolationModeChangeRequested);
 }
 
 void LCDDisplay::updateTime(int seconds)

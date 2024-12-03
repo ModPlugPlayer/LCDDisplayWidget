@@ -53,9 +53,9 @@ void PropertiesArea::setEqState(bool enabled) {
 void PropertiesArea::setAGCState(bool enabled) {
     agcState = enabled;
     if(enabled)
-        ui->eqState->setText("AGC");
+        ui->agcState->setText("AGC");
     else
-        ui->eqState->setText("");
+        ui->agcState->setText("");
 }
 
 void PropertiesArea::setXBassState(bool enabled) {
