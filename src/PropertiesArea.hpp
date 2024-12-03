@@ -12,8 +12,9 @@ You should have received a copy of the GNU General Public License along with thi
 #pragma once
 
 #include <QWidget>
-#include <APIStructures.hpp>
 #include <QMouseEvent>
+#include <APIStructures.hpp>
+using namespace ModPlugPlayer;
 
 namespace Ui {
 class PropertiesArea;
@@ -25,13 +26,13 @@ class PropertiesArea : public QWidget
 
 public:
     explicit PropertiesArea(QWidget *parent = nullptr);
-    void setRepeatMode(ModPlugPlayer::RepeatMode repeatMode);
+    void setRepeatMode(RepeatMode repeatMode);
     void setEqState(bool enabled);
     void setAGCState(bool enabled);
     void setXBassState(bool enabled);
     void setSurroundState(bool enabled);
     void setReverbState(bool enabled);
-    void setInterpolationMode(ModPlugPlayer::InterpolationMode interpolationMode);
+    void setInterpolationFilter(InterpolationFilter interpolationFilter);
     ~PropertiesArea();
 
 signals:
@@ -40,8 +41,8 @@ signals:
     void surroundStateChangeRequested(bool activated);
     void xBassStateChangeRequested(bool activated);
     void reverbStateChangeRequested(bool activated);
-    void repeatModeChangeRequested(ModPlugPlayer::RepeatMode repeatMode);
-    void interpolationModeChangeRequested(ModPlugPlayer::InterpolationMode interpolationMode);
+    void repeatModeChangeRequested(RepeatMode repeatMode);
+    void interpolationFilterChangeRequested(InterpolationFilter interpolationFilter);
 
 private:
     Ui::PropertiesArea *ui;
@@ -51,8 +52,8 @@ private:
     void onXBassDoubleClicked();
     void onSurroundDoubleClicked();
     void onReverbDoubleClicked();
-    void onInterpolationModeDoubleClicked();
-    bool eqState = false, agcState = false, xBassState = false, surroundState = false, reverbState = false;
-    ModPlugPlayer::RepeatMode repeatMode = ModPlugPlayer::RepeatMode::None;
-    ModPlugPlayer::InterpolationMode interpolationMode = ModPlugPlayer::InterpolationMode::NoInterpolation;
+    void onInterpolationFilterDoubleClicked();
+    bool eqEnabled = false, agcEnabled = false, xBassEnabled = false, surroundEnabled = false, reverbEnabled = false;
+    RepeatMode repeatMode = RepeatMode::None;
+    InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
 };

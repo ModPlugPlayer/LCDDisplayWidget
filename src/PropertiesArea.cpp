@@ -22,26 +22,26 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     connect(ui->xBassState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onXBassDoubleClicked);
     connect(ui->surroundState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onSurroundDoubleClicked);
     connect(ui->reverbState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onReverbDoubleClicked);
-    connect(ui->interpolationMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationModeDoubleClicked);
+    connect(ui->interpolationFilter, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationFilterDoubleClicked);
 }
 
-void PropertiesArea::setRepeatMode(ModPlugPlayer::RepeatMode repeatMode) {
+void PropertiesArea::setRepeatMode(RepeatMode repeatMode) {
     this->repeatMode = repeatMode;
     switch(repeatMode) {
-    case ModPlugPlayer::RepeatMode::None:
+    case RepeatMode::None:
         ui->repeatMode->setText("");
     break;
-    case ModPlugPlayer::RepeatMode::SingleTrack:
+    case RepeatMode::SingleTrack:
         ui->repeatMode->setText("Repeat Track");
     break;
-    case ModPlugPlayer::RepeatMode::PlayList:
+    case RepeatMode::PlayList:
         ui->repeatMode->setText("Repeat PlayList");
     break;
     }
 }
 
 void PropertiesArea::setEqState(bool enabled) {
-    eqState = enabled;
+    eqEnabled = enabled;
     if(enabled) {
         ui->eqState->setText("EQ");
     }
@@ -51,7 +51,7 @@ void PropertiesArea::setEqState(bool enabled) {
 }
 
 void PropertiesArea::setAGCState(bool enabled) {
-    agcState = enabled;
+    agcEnabled = enabled;
     if(enabled)
         ui->agcState->setText("AGC");
     else
@@ -59,7 +59,7 @@ void PropertiesArea::setAGCState(bool enabled) {
 }
 
 void PropertiesArea::setXBassState(bool enabled) {
-    xBassState = enabled;
+    xBassEnabled = enabled;
     if(enabled)
         ui->xBassState->setText("XBass");
     else
@@ -67,7 +67,7 @@ void PropertiesArea::setXBassState(bool enabled) {
 }
 
 void PropertiesArea::setSurroundState(bool enabled) {
-    surroundState = enabled;
+    surroundEnabled = enabled;
     if(enabled)
         ui->surroundState->setText("Surround");
     else
@@ -75,30 +75,30 @@ void PropertiesArea::setSurroundState(bool enabled) {
 }
 
 void PropertiesArea::setReverbState(bool enabled) {
-    reverbState = enabled;
+    reverbEnabled = enabled;
     if(enabled)
         ui->reverbState->setText("Reverb");
     else
         ui->reverbState->setText("");
 }
 
-void PropertiesArea::setInterpolationMode(ModPlugPlayer::InterpolationMode interpolationMode) {
-    this->interpolationMode = interpolationMode;
-    switch(interpolationMode) {
-        case ModPlugPlayer::InterpolationMode::NoInterpolation:
-            ui->interpolationMode->setText("No Interpolation");
+void PropertiesArea::setInterpolationFilter(InterpolationFilter interpolationFilter) {
+    this->interpolationFilter = interpolationFilter;
+    switch(interpolationFilter) {
+        case InterpolationFilter::Internal:
+            ui->interpolationFilter->setText("Int");
             break;
-        case ModPlugPlayer::InterpolationMode::Linear:
-            ui->interpolationMode->setText("Linear");
+        case InterpolationFilter::NoInterpolation:
+            ui->interpolationFilter->setText("No Int");
             break;
-        case ModPlugPlayer::InterpolationMode::Cubic:
-            ui->interpolationMode->setText("Cubic");
+        case InterpolationFilter::LinearInterpolation:
+            ui->interpolationFilter->setText("Linear");
             break;
-        case ModPlugPlayer::InterpolationMode::Sinc:
-            ui->interpolationMode->setText("HQ");
+        case InterpolationFilter::CubicInterpolation:
+            ui->interpolationFilter->setText("Cubic");
             break;
-        case ModPlugPlayer::InterpolationMode::SincPlusLowPass:
-            ui->interpolationMode->setText("HQ+");
+        case InterpolationFilter::WindowedSincWith8Taps:
+            ui->interpolationFilter->setText("HQ");
             break;
     }
 }
@@ -109,31 +109,31 @@ PropertiesArea::~PropertiesArea() {
 
 void PropertiesArea::onRepeatDoubleClicked()
 {
-    ModPlugPlayer::RepeatMode currentRepeatMode = this->repeatMode;
+    RepeatMode currentRepeatMode = this->repeatMode;
     emit repeatModeChangeRequested(currentRepeatMode++);
 }
 
 void PropertiesArea::onEqDoubleClicked() {
-    emit eqStateChangeRequested(!eqState);
+    emit eqStateChangeRequested(!eqEnabled);
 }
 
 void PropertiesArea::onAGCDoubleClicked() {
-    emit agcStateChangeRequested(!agcState);
+    emit agcStateChangeRequested(!agcEnabled);
 }
 
 void PropertiesArea::onXBassDoubleClicked() {
-    emit xBassStateChangeRequested(!xBassState);
+    emit xBassStateChangeRequested(!xBassEnabled);
 }
 
 void PropertiesArea::onSurroundDoubleClicked() {
-    emit surroundStateChangeRequested(!surroundState);
+    emit surroundStateChangeRequested(!surroundEnabled);
 }
 
 void PropertiesArea::onReverbDoubleClicked() {
-    emit reverbStateChangeRequested(!reverbState);
+    emit reverbStateChangeRequested(!reverbEnabled);
 }
 
-void PropertiesArea::onInterpolationModeDoubleClicked() {
-    ModPlugPlayer::InterpolationMode currentInterpolationMode = this->interpolationMode;
-    emit interpolationModeChangeRequested(currentInterpolationMode++);
+void PropertiesArea::onInterpolationFilterDoubleClicked() {
+    InterpolationFilter currentInterpolationFilter = this->interpolationFilter;
+    emit interpolationFilterChangeRequested(currentInterpolationFilter++);
 }

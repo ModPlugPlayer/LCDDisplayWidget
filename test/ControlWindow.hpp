@@ -54,7 +54,7 @@ signals:
     void xBassStateChangeRequested(const bool activated) override;
     void surroundStateChangeRequested(const bool activated) override;
     void reverbStateChangeRequested(const bool activated) override;
-    void interpolationModeChangeRequested(const ModPlugPlayer::InterpolationMode interpolationMode) override;
+    void interpolationFilterChangeRequested(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
     void eqStateChangeRequested(const bool activated) override;
     void alwaysOnTopStateChangeRequested(const bool alwaysOnTop) override;
     void titleBarHidingStateChangeRequested(const bool hide) override;
@@ -82,7 +82,7 @@ signals:
     void xBassStateChanged(const bool activated) override;
     void surroundStateChanged(const bool activated) override;
     void reverbStateChanged(const bool activated) override;
-    void interpolationModeChanged(const ModPlugPlayer::InterpolationMode interpolationMode) override;
+    void interpolationFilterChanged(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
     void alwaysOnTopStateChanged(const bool alwaysOnTop) override;
     void titleBarHidingStateChanged(const bool hide) override;
     void snappingToViewPortStateChanged(const bool snapToViewPort) override;
@@ -115,7 +115,7 @@ public slots:
     void onXBassStateChangeRequested(const bool activated) override;
     void onSurroundStateChangeRequested(const bool activated) override;
     void onReverbStateChangeRequested(const bool activated) override;
-    void onInterpolationModeChangeRequested(const ModPlugPlayer::InterpolationMode interpolationMode) override;
+    void onInterpolationFilterChangeRequested(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
 
 private slots:
     void on_previousButton_clicked();
@@ -131,8 +131,12 @@ private slots:
 private:
     Ui::ControlWindow *ui;
     RepeatMode repeatMode = RepeatMode::None;
-    InterpolationMode interpolationMode = InterpolationMode::NoInterpolation;
-    bool eqState = false, agcState = false, xBassState = false, surroundState = false, reverbState = false;
+    InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
+    bool eqEnabled = false;
+    bool agcEnabled = false;
+    bool xBassEnabled = false;
+    bool surroundEnabled = false;
+    bool reverbEnabled = false;
     PlayingStatus playingStatus = PlayingStatus::Stopped;
     void changeRepeatMode(ModPlugPlayer::RepeatMode repeatMode);
     PlayingMode playingMode = PlayingMode::SingleTrack;

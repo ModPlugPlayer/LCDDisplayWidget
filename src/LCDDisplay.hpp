@@ -13,7 +13,9 @@ You should have received a copy of the GNU General Public License along with thi
 
 #include <QWidget>
 #include "TextColorProperties.hpp"
-#include <APIStructures.hpp>
+#include <APIStructures.hpp>.hpp>
+
+using namespace ModPlugPlayer;
 
 namespace Ui {
 class LCDDisplay;
@@ -27,7 +29,7 @@ public:
     explicit LCDDisplay(QWidget *parent = nullptr);
     void updateTime(int seconds);
     void setSongTitle(QString songTitle);
-    void setRepeatMode(ModPlugPlayer::RepeatMode repeatMode);
+    void setRepeatMode(RepeatMode repeatMode);
     void setSongDuration(size_t songDurationSeconds);
     ~LCDDisplay();
 
@@ -37,8 +39,8 @@ signals:
     void surroundStateChangeRequested(bool activated);
     void xBassStateChangeRequested(bool activated);
     void reverbStateChangeRequested(bool activated);
-    void repeatModeChangeRequested(ModPlugPlayer::RepeatMode repeatMode);
-    void interpolationModeChangeRequested(ModPlugPlayer::InterpolationMode interpolationMode);
+    void repeatModeChangeRequested(RepeatMode repeatMode);
+    void interpolationFilterChangeRequested(InterpolationFilter interpolationFilter);
 
 public slots:
     void onSurroundStateChanged(bool activated);
@@ -46,8 +48,8 @@ public slots:
     void onAGCStateChanged(bool activated);
     void onXBassStateChanged(bool activated);
     void onReverbStateChanged(bool activated);
-    void onRepeatModeChanged(ModPlugPlayer::RepeatMode repeatMode);
-    void onInterpolationModeChanged(ModPlugPlayer::InterpolationMode interpolationMode);
+    void onRepeatModeChanged(RepeatMode repeatMode);
+    void onInterpolationFilterChanged(InterpolationFilter interpolationFilter);
 private:
     Ui::LCDDisplay *ui;
     QFont *SevenSegment;

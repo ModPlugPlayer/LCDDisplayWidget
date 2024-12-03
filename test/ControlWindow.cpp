@@ -31,7 +31,7 @@ ControlWindow::ControlWindow(QWidget *parent) :
     connect(this, &ControlWindow::xBassStateChanged, ui->display, &LCDDisplay::onXBassStateChanged);
     connect(this, &ControlWindow::surroundStateChanged, ui->display, &LCDDisplay::onSurroundStateChanged);
     connect(this, &ControlWindow::reverbStateChanged, ui->display, &LCDDisplay::onReverbStateChanged);
-    connect(this, &ControlWindow::interpolationModeChanged, ui->display, &LCDDisplay::onInterpolationModeChanged);
+    connect(this, &ControlWindow::interpolationFilterChanged, ui->display, &LCDDisplay::onInterpolationFilterChanged);
 
     connect(ui->display, &LCDDisplay::repeatModeChangeRequested, this, &ControlWindow::repeatModeChangeRequested);
     connect(ui->display, &LCDDisplay::eqStateChangeRequested, this, &ControlWindow::onEqStateChangeRequested);
@@ -39,7 +39,7 @@ ControlWindow::ControlWindow(QWidget *parent) :
     connect(ui->display, &LCDDisplay::xBassStateChangeRequested, this, &ControlWindow::onXBassStateChangeRequested);
     connect(ui->display, &LCDDisplay::surroundStateChangeRequested, this, &ControlWindow::onSurroundStateChangeRequested);
     connect(ui->display, &LCDDisplay::reverbStateChangeRequested, this, &ControlWindow::onReverbStateChangeRequested);
-    connect(ui->display, &LCDDisplay::interpolationModeChangeRequested, this, &ControlWindow::onInterpolationModeChangeRequested);
+    connect(ui->display, &LCDDisplay::interpolationFilterChangeRequested, this, &ControlWindow::onInterpolationFilterChangeRequested);
     ui->playlistButton->click();
 }
 
@@ -153,34 +153,34 @@ void ControlWindow::onRepeatModeChangeRequested(RepeatMode repeatMode) {
 }
 
 void ControlWindow::onEqStateChangeRequested(const bool activated) {
-    eqState = activated;
+    eqEnabled = activated;
     emit eqStateChanged(activated);
 }
 
 void ControlWindow::onAGCStateChangeRequested(const bool activated) {
-    agcState = activated;
+    agcEnabled = activated;
     emit agcStateChanged(activated);
 }
 
 void ControlWindow::onXBassStateChangeRequested(const bool activated) {
-    xBassState = activated;
+    xBassEnabled = activated;
     emit xBassStateChanged(activated);
 
 }
 
 void ControlWindow::onSurroundStateChangeRequested(const bool activated) {
-    surroundState = activated;
+    surroundEnabled = activated;
     emit surroundStateChanged(activated);
 }
 
 void ControlWindow::onReverbStateChangeRequested(const bool activated) {
-    reverbState = activated;
+    reverbEnabled = activated;
     emit reverbStateChanged(activated);
 }
 
-void ControlWindow::onInterpolationModeChangeRequested(const InterpolationMode interpolationMode) {
-    this->interpolationMode = interpolationMode;
-    emit interpolationModeChanged(interpolationMode);
+void ControlWindow::onInterpolationFilterChangeRequested(const InterpolationFilter interpolationFilter) {
+    this->interpolationFilter = interpolationFilter;
+    emit interpolationFilterChanged(interpolationFilter);
 }
 
 void ControlWindow::onAlwaysOnTopStateChangeRequested(bool alwaysOnTop) {

@@ -33,7 +33,7 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     connect(ui->propertiesArea, &PropertiesArea::xBassStateChangeRequested, this, &LCDDisplay::xBassStateChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::surroundStateChangeRequested, this, &LCDDisplay::surroundStateChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::reverbStateChangeRequested, this, &LCDDisplay::reverbStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::interpolationModeChangeRequested, this, &LCDDisplay::interpolationModeChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::interpolationFilterChangeRequested, this, &LCDDisplay::interpolationFilterChangeRequested);
 }
 
 void LCDDisplay::updateTime(int seconds)
@@ -46,7 +46,7 @@ void LCDDisplay::setSongTitle(QString songTitle)
     ui->titleArea->setSongTitle(songTitle);
 }
 
-void LCDDisplay::setRepeatMode(ModPlugPlayer::RepeatMode repeatMode)
+void LCDDisplay::setRepeatMode(RepeatMode repeatMode)
 {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
@@ -82,12 +82,12 @@ void LCDDisplay::onReverbStateChanged(bool activated) {
     ui->propertiesArea->setReverbState(activated);
 }
 
-void LCDDisplay::onRepeatModeChanged(ModPlugPlayer::RepeatMode repeatMode) {
+void LCDDisplay::onRepeatModeChanged(RepeatMode repeatMode) {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::onInterpolationModeChanged(ModPlugPlayer::InterpolationMode interpolationMode) {
-    ui->propertiesArea->setInterpolationMode(interpolationMode);
+void LCDDisplay::onInterpolationFilterChanged(InterpolationFilter interpolationFilter) {
+    ui->propertiesArea->setInterpolationFilter(interpolationFilter);
 }
 
 void LCDDisplay::refreshStyleSheet() {
