@@ -28,13 +28,16 @@ PropertiesArea::PropertiesArea(QWidget *parent)
 void PropertiesArea::setRepeatMode(RepeatMode repeatMode) {
     this->repeatMode = repeatMode;
     switch(repeatMode) {
-    case RepeatMode::None:
+    case RepeatMode::NoRepeat:
         ui->repeatMode->setText("");
     break;
-    case RepeatMode::SingleTrack:
+    case RepeatMode::RepeatTrack:
         ui->repeatMode->setText("Repeat Track");
     break;
-    case RepeatMode::PlayList:
+    case RepeatMode::LoopTrack:
+        ui->repeatMode->setText("Loop Track");
+        break;
+    case RepeatMode::RepeatPlayList:
         ui->repeatMode->setText("Repeat PlayList");
     break;
     }

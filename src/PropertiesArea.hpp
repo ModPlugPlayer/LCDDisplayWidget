@@ -54,6 +54,6 @@ private:
     void onReverbDoubleClicked();
     void onInterpolationFilterDoubleClicked();
     bool eqEnabled = false, agcEnabled = false, xBassEnabled = false, surroundEnabled = false, reverbEnabled = false;
-    RepeatMode repeatMode = RepeatMode::None;
+    RepeatMode repeatMode = RepeatMode::NoRepeat;
     InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
 };
