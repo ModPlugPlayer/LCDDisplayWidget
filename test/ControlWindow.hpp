@@ -130,7 +130,7 @@ private slots:
 
 private:
     Ui::ControlWindow *ui;
-    RepeatMode repeatMode = RepeatMode::None;
+    RepeatMode repeatMode = RepeatMode::NoRepeat;
     InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
     bool eqEnabled = false;
     bool agcEnabled = false;
