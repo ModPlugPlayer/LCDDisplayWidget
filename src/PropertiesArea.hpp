@@ -26,34 +26,30 @@ class PropertiesArea : public QWidget
 
 public:
     explicit PropertiesArea(QWidget *parent = nullptr);
-    void setRepeatMode(RepeatMode repeatMode);
-    void setEqState(bool enabled);
-    void setAGCState(bool enabled);
-    void setXBassState(bool enabled);
-    void setSurroundState(bool enabled);
-    void setReverbState(bool enabled);
-    void setInterpolationFilter(InterpolationFilter interpolationFilter);
+    void setRepeatMode(const RepeatMode repeatMode);
+    void setEqState(const bool enabled);
+    void setDSPState(const bool enabled);
+    void setAmigaFilter(const AmigaFilter amigaFilter);
+    void setInterpolationFilter(const InterpolationFilter interpolationFilter);
+    void setSoundResolution(const int frequency,const int bitRate, const bool soundChannelAmount);
+    void setMusicChannelAmount(const int channelAmount);
     ~PropertiesArea();
 
 signals:
-    void eqStateChangeRequested(bool activated);
-    void agcStateChangeRequested(bool activated);
-    void surroundStateChangeRequested(bool activated);
-    void xBassStateChangeRequested(bool activated);
-    void reverbStateChangeRequested(bool activated);
-    void repeatModeChangeRequested(RepeatMode repeatMode);
-    void interpolationFilterChangeRequested(InterpolationFilter interpolationFilter);
-
+    void repeatModeChangeRequested(const RepeatMode repeatMode);
+    void eqStateChangeRequested(const bool activated);
+    void dspStateChangeRequested(const bool activated);
+    void amigaFilterChangeRequested(const AmigaFilter amigaFilter);
+    void interpolationFilterChangeRequested(const InterpolationFilter interpolationFilter);
 private:
     Ui::PropertiesArea *ui;
     void onRepeatDoubleClicked();
     void onEqDoubleClicked();
-    void onAGCDoubleClicked();
-    void onXBassDoubleClicked();
-    void onSurroundDoubleClicked();
-    void onReverbDoubleClicked();
+    void onDSPDoubleClicked();
+    void onAmigaFilterDoubleClicked();
     void onInterpolationFilterDoubleClicked();
-    bool eqEnabled = false, agcEnabled = false, xBassEnabled = false, surroundEnabled = false, reverbEnabled = false;
+    bool eqEnabled = false, dspEnabled = false;
     RepeatMode repeatMode = RepeatMode::NoRepeat;
     InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
+    AmigaFilter amigaFilter = AmigaFilter::Amiga500;
 };

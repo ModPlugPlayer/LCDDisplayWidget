@@ -13,7 +13,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 #include <QWidget>
 #include "TextColorProperties.hpp"
-#include <APIStructures.hpp>.hpp>
+#include <APIStructures.hpp>
 
 using namespace ModPlugPlayer;
 
@@ -27,29 +27,26 @@ class LCDDisplay : public QWidget, public TextColorProperties
 
 public:
     explicit LCDDisplay(QWidget *parent = nullptr);
-    void updateTime(int seconds);
-    void setSongTitle(QString songTitle);
-    void setRepeatMode(RepeatMode repeatMode);
-    void setSongDuration(size_t songDurationSeconds);
+    void updateTime(const int seconds);
+    void setSongTitle(const QString songTitle);
+    void setRepeatMode(const RepeatMode repeatMode);
+    void setSongDuration(const size_t songDurationSeconds);
     ~LCDDisplay();
 
 signals:
-    void eqStateChangeRequested(bool activated);
-    void agcStateChangeRequested(bool activated);
-    void surroundStateChangeRequested(bool activated);
-    void xBassStateChangeRequested(bool activated);
-    void reverbStateChangeRequested(bool activated);
-    void repeatModeChangeRequested(RepeatMode repeatMode);
-    void interpolationFilterChangeRequested(InterpolationFilter interpolationFilter);
+    void repeatModeChangeRequested(const RepeatMode repeatMode);
+    void eqStateChangeRequested(const bool activated);
+    void dspStateChangeRequested(const bool activated);
+    void amigaFilterChangeRequested(const AmigaFilter amigaFilter);
+    void interpolationFilterChangeRequested(const InterpolationFilter interpolationFilter);
 
 public slots:
-    void onSurroundStateChanged(bool activated);
-    void onEqStateChanged(bool activated);
-    void onAGCStateChanged(bool activated);
-    void onXBassStateChanged(bool activated);
-    void onReverbStateChanged(bool activated);
-    void onRepeatModeChanged(RepeatMode repeatMode);
-    void onInterpolationFilterChanged(InterpolationFilter interpolationFilter);
+    void onRepeatModeChanged(const RepeatMode repeatMode);
+    void onEqStateChanged(const bool activated);
+    void onDSPStateChanged(const bool activated);
+    void onAmigaFilterChanged(const AmigaFilter amigaFilter);
+    void onInterpolationFilterChanged(const InterpolationFilter interpolationFilter);
+
 private:
     Ui::LCDDisplay *ui;
     QFont *SevenSegment;

@@ -28,7 +28,7 @@ TitleArea::TitleArea(QWidget *parent)
     ui->title->setFont(*InterFont);
 }
 
-void TitleArea::setSongTitle(QString &songTitle)
+void TitleArea::setSongTitle(const QString &songTitle)
 {
     ui->title->setText(songTitle);
 }
@@ -40,7 +40,7 @@ TitleArea::~TitleArea()
     delete ui;
 }
 
-void TitleArea::setSongDuration(size_t songDurationSeconds)
+void TitleArea::setSongDuration(const size_t songDurationSeconds)
 {
     QString text = QStringLiteral("%1:%2").arg(songDurationSeconds/60, 2, 10, QLatin1Char('0')).arg(songDurationSeconds%60, 2, 10, QLatin1Char('0'));
     //text.sprintf("%02d:%02ds", songDurationSeconds/60, songDurationSeconds%60);

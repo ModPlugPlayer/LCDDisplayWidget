@@ -29,29 +29,27 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     InterFont = new QFont("Inter", 20, QFont::Normal);
     connect(ui->propertiesArea, &PropertiesArea::repeatModeChangeRequested, this, &LCDDisplay::repeatModeChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::agcStateChangeRequested, this, &LCDDisplay::agcStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::xBassStateChangeRequested, this, &LCDDisplay::xBassStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::surroundStateChangeRequested, this, &LCDDisplay::surroundStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::reverbStateChangeRequested, this, &LCDDisplay::reverbStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::dspStateChangeRequested, this, &LCDDisplay::dspStateChangeRequested);
+    connect(ui->propertiesArea, &PropertiesArea::amigaFilterChangeRequested, this, &LCDDisplay::amigaFilterChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::interpolationFilterChangeRequested, this, &LCDDisplay::interpolationFilterChangeRequested);
 }
 
-void LCDDisplay::updateTime(int seconds)
+void LCDDisplay::updateTime(const int seconds)
 {
     ui->timeArea->updateTime(seconds);
 }
 
-void LCDDisplay::setSongTitle(QString songTitle)
+void LCDDisplay::setSongTitle(const QString songTitle)
 {
     ui->titleArea->setSongTitle(songTitle);
 }
 
-void LCDDisplay::setRepeatMode(RepeatMode repeatMode)
+void LCDDisplay::setRepeatMode(const RepeatMode repeatMode)
 {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::setSongDuration(size_t songDurationSeconds)
+void LCDDisplay::setSongDuration(const size_t songDurationSeconds)
 {
     ui->titleArea->setSongDuration(songDurationSeconds);
 }
@@ -62,31 +60,24 @@ LCDDisplay::~LCDDisplay() {
     delete ui;
 }
 
-void LCDDisplay::onEqStateChanged(bool activated) {
-    ui->propertiesArea->setEqState(activated);
-}
-
-void LCDDisplay::onAGCStateChanged(bool activated) {
-    ui->propertiesArea->setAGCState(activated);
-}
-
-void LCDDisplay::onSurroundStateChanged(bool activated) {
-    ui->propertiesArea->setSurroundState(activated);
-}
-
-void LCDDisplay::onXBassStateChanged(bool activated) {
-    ui->propertiesArea->setXBassState(activated);
-}
-
-void LCDDisplay::onReverbStateChanged(bool activated) {
-    ui->propertiesArea->setReverbState(activated);
-}
-
-void LCDDisplay::onRepeatModeChanged(RepeatMode repeatMode) {
+void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::onInterpolationFilterChanged(InterpolationFilter interpolationFilter) {
+void LCDDisplay::onEqStateChanged(const bool activated) {
+    ui->propertiesArea->setEqState(activated);
+}
+
+void LCDDisplay::onDSPStateChanged(const bool activated) {
+    ui->propertiesArea->setDSPState(activated);
+}
+
+void LCDDisplay::onAmigaFilterChanged(const AmigaFilter amigaFilter) {
+    ui->propertiesArea->setAmigaFilter(amigaFilter);
+}
+
+
+void LCDDisplay::onInterpolationFilterChanged(const InterpolationFilter interpolationFilter) {
     ui->propertiesArea->setInterpolationFilter(interpolationFilter);
 }
 

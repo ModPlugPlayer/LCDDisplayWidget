@@ -18,32 +18,30 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     ui->setupUi(this);
     connect(ui->repeatMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onRepeatDoubleClicked);
     connect(ui->eqState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onEqDoubleClicked);
-    connect(ui->agcState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onAGCDoubleClicked);
-    connect(ui->xBassState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onXBassDoubleClicked);
-    connect(ui->surroundState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onSurroundDoubleClicked);
-    connect(ui->reverbState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onReverbDoubleClicked);
+    connect(ui->dspState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onDSPDoubleClicked);
+    connect(ui->amigaFilter, &ClickableLabel::doubleClicked, this, &PropertiesArea::onAmigaFilterDoubleClicked);
     connect(ui->interpolationFilter, &ClickableLabel::doubleClicked, this, &PropertiesArea::onInterpolationFilterDoubleClicked);
 }
 
-void PropertiesArea::setRepeatMode(RepeatMode repeatMode) {
+void PropertiesArea::setRepeatMode(const RepeatMode repeatMode) {
     this->repeatMode = repeatMode;
     switch(repeatMode) {
     case RepeatMode::NoRepeat:
         ui->repeatMode->setText("");
     break;
     case RepeatMode::RepeatTrack:
-        ui->repeatMode->setText("Repeat Track");
+        ui->repeatMode->setText("Repeat");
     break;
     case RepeatMode::LoopTrack:
-        ui->repeatMode->setText("Loop Track");
+        ui->repeatMode->setText("Loop");
         break;
     case RepeatMode::RepeatPlayList:
-        ui->repeatMode->setText("Repeat PlayList");
+        ui->repeatMode->setText("Rpt PList");
     break;
     }
 }
 
-void PropertiesArea::setEqState(bool enabled) {
+void PropertiesArea::setEqState(const bool enabled) {
     eqEnabled = enabled;
     if(enabled) {
         ui->eqState->setText("EQ");
@@ -53,55 +51,53 @@ void PropertiesArea::setEqState(bool enabled) {
     }
 }
 
-void PropertiesArea::setAGCState(bool enabled) {
-    agcEnabled = enabled;
+
+void PropertiesArea::setDSPState(const bool enabled) {
+    dspEnabled = enabled;
     if(enabled)
-        ui->agcState->setText("AGC");
+        ui->dspState->setText("DSP");
     else
-        ui->agcState->setText("");
+        ui->dspState->setText("");
 }
 
-void PropertiesArea::setXBassState(bool enabled) {
-    xBassEnabled = enabled;
-    if(enabled)
-        ui->xBassState->setText("XBass");
-    else
-        ui->xBassState->setText("");
+void PropertiesArea::setAmigaFilter(const AmigaFilter amigaFilter) {
+    this->amigaFilter = amigaFilter;
+    switch(amigaFilter) {
+        case AmigaFilter::Unfiltered:
+            ui->amigaFilter->setText("Unfiltered");
+            break;
+        case AmigaFilter::Amiga500:
+            ui->amigaFilter->setText("Amiga 500");
+            break;
+        case AmigaFilter::Amiga1200:
+            ui->amigaFilter->setText("Amiga 1200");
+            break;
+        case AmigaFilter::DisablePaulaEmulation:
+            ui->amigaFilter->setText("Non Amiga");
+            break;
+        case AmigaFilter::Auto:
+            ui->amigaFilter->setText("Auto Amiga");
+            break;
+    }
 }
 
-void PropertiesArea::setSurroundState(bool enabled) {
-    surroundEnabled = enabled;
-    if(enabled)
-        ui->surroundState->setText("Surround");
-    else
-        ui->surroundState->setText("");
-}
-
-void PropertiesArea::setReverbState(bool enabled) {
-    reverbEnabled = enabled;
-    if(enabled)
-        ui->reverbState->setText("Reverb");
-    else
-        ui->reverbState->setText("");
-}
-
-void PropertiesArea::setInterpolationFilter(InterpolationFilter interpolationFilter) {
+void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolationFilter) {
     this->interpolationFilter = interpolationFilter;
     switch(interpolationFilter) {
         case InterpolationFilter::Internal:
-            ui->interpolationFilter->setText("Int");
+            ui->interpolationFilter->setText("Default");
             break;
         case InterpolationFilter::NoInterpolation:
-            ui->interpolationFilter->setText("No Int");
+            ui->amigaFilter->setText("No Int.");
             break;
         case InterpolationFilter::LinearInterpolation:
-            ui->interpolationFilter->setText("Linear");
+            ui->amigaFilter->setText("Linear");
             break;
         case InterpolationFilter::CubicInterpolation:
-            ui->interpolationFilter->setText("Cubic");
+            ui->amigaFilter->setText("Cubic");
             break;
         case InterpolationFilter::WindowedSincWith8Taps:
-            ui->interpolationFilter->setText("HQ");
+            ui->amigaFilter->setText("Sinc");
             break;
     }
 }
@@ -120,20 +116,13 @@ void PropertiesArea::onEqDoubleClicked() {
     emit eqStateChangeRequested(!eqEnabled);
 }
 
-void PropertiesArea::onAGCDoubleClicked() {
-    emit agcStateChangeRequested(!agcEnabled);
+void PropertiesArea::onDSPDoubleClicked() {
+    emit dspStateChangeRequested(!dspEnabled);
 }
 
-void PropertiesArea::onXBassDoubleClicked() {
-    emit xBassStateChangeRequested(!xBassEnabled);
-}
-
-void PropertiesArea::onSurroundDoubleClicked() {
-    emit surroundStateChangeRequested(!surroundEnabled);
-}
-
-void PropertiesArea::onReverbDoubleClicked() {
-    emit reverbStateChangeRequested(!reverbEnabled);
+void PropertiesArea::onAmigaFilterDoubleClicked() {
+    AmigaFilter currentAmigaFilter = amigaFilter;
+    emit amigaFilterChangeRequested(currentAmigaFilter++);
 }
 
 void PropertiesArea::onInterpolationFilterDoubleClicked() {

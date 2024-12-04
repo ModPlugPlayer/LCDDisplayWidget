@@ -23,10 +23,10 @@ class TitleArea : public QWidget
 
 public:
     explicit TitleArea(QWidget *parent = nullptr);
-    void setSongTitle(QString &songTitle);
+    void setSongTitle(const QString &songTitle);
     ~TitleArea();
 
-    void setSongDuration(size_t songDurationSeconds);
+    void setSongDuration(const size_t songDurationSeconds);
 private:
     Ui::TitleArea *ui;
     QFont *SevenSegment;
