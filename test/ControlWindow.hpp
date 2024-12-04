@@ -58,7 +58,7 @@ signals:
     void eqStateChangeRequested(const bool activated) override;
     void alwaysOnTopStateChangeRequested(const bool alwaysOnTop) override;
     void titleBarHidingStateChangeRequested(const bool hide) override;
-    void snapingToViewPortStateChangeRequested(const bool toBeSnappedToViewPort) override;
+    void snappingToViewPortStateChangeRequested(const bool toBeSnappedToViewPort) override;
     void keepingStayingInViewPortStateChangeRequested(const bool toBeKeptStayingInViewPort) override;
 
     //Response Signals
@@ -90,6 +90,8 @@ signals:
 
 public slots:
     // Request Signal Handlers
+    void onOpenRequested(const std::filesystem::path filePath) override;
+    void onOpenRequested(const PlayListItem playListItem) override;
     void onLoaded(std::filesystem::path filePath, bool successfull) override;
     void onLoaded(PlayListItem playListItem, bool successfull) override;
     void onStopRequested() override;
