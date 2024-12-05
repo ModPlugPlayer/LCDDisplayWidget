@@ -31,4 +31,5 @@ private:
     Ui::TitleArea *ui;
     QFont *SevenSegment;
     QFont *InterFont;
+    QFont *SongTitleFont;
 };

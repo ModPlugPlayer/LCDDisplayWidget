@@ -23,13 +23,28 @@ TitleArea::TitleArea(QWidget *parent)
         setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea, false);
     #endif
 
-    SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
-    InterFont = new QFont("Inter", 20, QFont::Normal);
-    ui->title->setFont(*InterFont);
+    SevenSegment = new QFont("Seven Segment", 12, QFont::Normal);
+    InterFont = new QFont("Inter", 11, QFont::Normal);
+    SongTitleFont = new QFont("Inter", 19, QFont::Normal);
+    ui->title->setFont(*SongTitleFont);
+    ui->subSong->setFont(*SevenSegment);
+    ui->subSongAmount->setFont(*SevenSegment);
+    ui->songDuration_colon->setFont(*SevenSegment);
+    ui->pattern->setFont(*SevenSegment);
+    ui->pattern_3->setFont(*SevenSegment);
+
+    ui->songDuration_minute1->setFont(*SevenSegment);
+    ui->songDuration_minute2->setFont(*SevenSegment);
+    ui->songDuration_second1->setFont(*SevenSegment);
+    ui->songDuration_second2->setFont(*SevenSegment);
+
+    ui->s->setFont(*InterFont);
+    ui->of->setFont(*InterFont);
+    ui->slash->setFont(*InterFont);
+    ui->song->setFont(*InterFont);
 }
 
-void TitleArea::setSongTitle(const QString &songTitle)
-{
+void TitleArea::setSongTitle(const QString &songTitle) {
     ui->title->setText(songTitle);
 }
 
@@ -37,14 +52,13 @@ TitleArea::~TitleArea()
 {
     delete SevenSegment;
     delete InterFont;
+    delete SongTitleFont;
     delete ui;
 }
 
-void TitleArea::setSongDuration(const size_t songDurationSeconds)
-{
+void TitleArea::setSongDuration(const size_t songDurationSeconds) {
     QString text = QStringLiteral("%1:%2").arg(songDurationSeconds/60, 2, 10, QLatin1Char('0')).arg(songDurationSeconds%60, 2, 10, QLatin1Char('0'));
     //text.sprintf("%02d:%02ds", songDurationSeconds/60, songDurationSeconds%60);
 
-    ui->songDuration->setText(text);
-
+    ui->songDuration_second2->setText(text);
 }

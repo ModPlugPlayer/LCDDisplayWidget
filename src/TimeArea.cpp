@@ -24,12 +24,14 @@ TimeArea::TimeArea(QWidget *parent)
     #endif
 
     SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
-    InterFont = new QFont("Inter", 20, QFont::Normal);
+    InterFont = new QFont("Inter", 11, QFont::Normal);
     ui->secondDigit1->setFont(*SevenSegment);
     ui->secondDigit2->setFont(*SevenSegment);
     ui->minuteDigit1->setFont(*SevenSegment);
     ui->minuteDigit2->setFont(*SevenSegment);
     ui->colon->setFont(*SevenSegment);
+    ui->min->setFont(*InterFont);
+    ui->sec->setFont(*InterFont);
 }
 
 void TimeArea::updateTime(int seconds)

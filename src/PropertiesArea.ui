@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -30,7 +30,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QLabel" name="soundResolution">
+    <widget class="ClickableLabel" name="frequency">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -39,27 +39,24 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>32</width>
-       <height>10</height>
+       <width>12</width>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>32</width>
+       <width>12</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>44kHz</string>
+      <string>44</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -67,7 +64,7 @@ margin-top: -1px;</string>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="soundResolution_2">
+    <widget class="QLabel" name="kHz">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -76,27 +73,24 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>30</width>
+       <width>18</width>
        <height>10</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>30</width>
+       <width>18</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>16 Bit</string>
+      <string>kHz</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -104,7 +98,23 @@ margin-top: -1px;</string>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="soundResolution_3">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>1</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="ClickableLabel" name="bitRate">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -113,24 +123,121 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>32</width>
+       <width>11</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>11</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">margin-top: -1px;</string>
+     </property>
+     <property name="text">
+      <string>16</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>2</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="bit">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>14</width>
        <height>10</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>32</width>
+       <width>14</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
+     </property>
+     <property name="text">
+      <string>Bit</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>3</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="channelMode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>36</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>36</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>Stereo</string>
@@ -150,30 +257,27 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>23</width>
-       <height>10</height>
+       <width>24</width>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>23</width>
-       <height>10</height>
+       <width>24</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>DSP</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
     </widget>
    </item>
@@ -187,30 +291,27 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>21</width>
-       <height>10</height>
+       <width>18</width>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>21</width>
-       <height>10</height>
+       <width>24</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>EQ</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
     </widget>
    </item>
@@ -224,27 +325,24 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>33</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>33</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string/>
+      <string>Repeat</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -261,7 +359,7 @@ margin-top: -1px;</string>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>10</width>
+       <width>0</width>
        <height>5</height>
       </size>
      </property>
@@ -277,24 +375,21 @@ margin-top: -1px;</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>17</width>
+       <width>14</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>17</width>
+       <width>14</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>00</string>
@@ -325,13 +420,10 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>/</string>
@@ -362,13 +454,10 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>00</string>
@@ -399,13 +488,10 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>Chn</string>
@@ -436,13 +522,10 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
       <string>MPTM</string>
@@ -462,7 +545,7 @@ margin-top: -1px;</string>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>10</width>
+       <width>0</width>
        <height>5</height>
       </size>
      </property>
@@ -489,16 +572,13 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>Default Int.</string>
+      <string>Sinc Int.</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
@@ -526,16 +606,13 @@ margin-top: -1px;</string>
       </size>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 9px;
-margin-top: -1px;</string>
+      <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>Auto Amiga</string>
+      <string>Amiga 500</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>

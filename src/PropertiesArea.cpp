@@ -16,6 +16,27 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PropertiesArea) {
     ui->setupUi(this);
+
+    SevenSegment = new QFont("Seven Segment", 11, QFont::Normal);
+    InterFont = new QFont("Inter", 10, QFont::Normal);
+
+    ui->activeChannelAmount->setFont(*SevenSegment);
+    ui->channelAmount->setFont(*SevenSegment);
+    ui->frequency->setFont(*SevenSegment);
+    ui->bitRate->setFont(*SevenSegment);
+
+    ui->repeatMode->setFont(*InterFont);
+    ui->channelMode->setFont(*InterFont);
+    ui->interpolationFilter->setFont(*InterFont);
+    ui->amigaFilter->setFont(*InterFont);
+    ui->chn->setFont(*InterFont);
+    ui->eqState->setFont(*InterFont);
+    ui->kHz->setFont(*InterFont);
+    ui->moduleFormat->setFont(*InterFont);
+    ui->slash->setFont(*InterFont);
+    ui->bit->setFont(*InterFont);
+    ui->dspState->setFont(*InterFont);
+    ui->repeatMode->setFont(*InterFont);
     connect(ui->repeatMode, &ClickableLabel::doubleClicked, this, &PropertiesArea::onRepeatDoubleClicked);
     connect(ui->eqState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onEqDoubleClicked);
     connect(ui->dspState, &ClickableLabel::doubleClicked, this, &PropertiesArea::onDSPDoubleClicked);
@@ -36,7 +57,7 @@ void PropertiesArea::setRepeatMode(const RepeatMode repeatMode) {
         ui->repeatMode->setText("Loop");
         break;
     case RepeatMode::RepeatPlayList:
-        ui->repeatMode->setText("Rpt PList");
+        ui->repeatMode->setText("Rpt Lst");
     break;
     }
 }
@@ -73,7 +94,7 @@ void PropertiesArea::setAmigaFilter(const AmigaFilter amigaFilter) {
             ui->amigaFilter->setText("Amiga 1200");
             break;
         case AmigaFilter::DisablePaulaEmulation:
-            ui->amigaFilter->setText("Non Amiga");
+            ui->amigaFilter->setText("");
             break;
         case AmigaFilter::Auto:
             ui->amigaFilter->setText("Auto Amiga");
@@ -102,7 +123,49 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
     }
 }
 
+void PropertiesArea::setChannelAmount(const int channelAmount) {
+    ui->channelAmount->setText(QString::number(channelAmount).rightJustified(2, '0'));
+}
+
+void PropertiesArea::setActiveChannelAmount(const int channelAmount)
+{
+    ui->activeChannelAmount->setText(QString::number(channelAmount).rightJustified(2, '0'));
+}
+
+void PropertiesArea::setChannelMode(const ChannelMode channelMode)
+{
+    QString channelModeString;
+    switch (channelMode) {
+    case ChannelMode::Mono:
+        channelModeString = "Mono";
+        break;
+    case ChannelMode::Stereo:
+        channelModeString = "Stereo";
+        break;
+    case ChannelMode::Quadraphonic:
+        channelModeString = "Quad";
+        break;
+    case ChannelMode::Pentaphonic:
+        channelModeString = "Penta";
+        break;
+    case ChannelMode::Surround_5_1:
+        channelModeString = "5.1";
+        break;
+    case ChannelMode::Surround_7_1:
+        channelModeString = "7.1";
+        break;
+    }
+    ui->channelMode->setText(channelModeString);
+}
+
+void PropertiesArea::setModuleFormat(const QString moduleFormat)
+{
+    ui->moduleFormat->setText(moduleFormat);
+}
+
 PropertiesArea::~PropertiesArea() {
+    delete SevenSegment;
+    delete InterFont;
     delete ui;
 }
 
