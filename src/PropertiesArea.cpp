@@ -109,16 +109,16 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
             ui->interpolationFilter->setText("Default");
             break;
         case InterpolationFilter::NoInterpolation:
-            ui->amigaFilter->setText("No Int.");
+            ui->interpolationFilter->setText("");
             break;
         case InterpolationFilter::LinearInterpolation:
-            ui->amigaFilter->setText("Linear");
+            ui->interpolationFilter->setText("Linear");
             break;
         case InterpolationFilter::CubicInterpolation:
-            ui->amigaFilter->setText("Cubic");
+            ui->interpolationFilter->setText("Cubic");
             break;
         case InterpolationFilter::WindowedSincWith8Taps:
-            ui->amigaFilter->setText("Sinc");
+            ui->interpolationFilter->setText("Sinc");
             break;
     }
 }

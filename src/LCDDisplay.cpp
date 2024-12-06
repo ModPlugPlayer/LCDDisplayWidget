@@ -16,8 +16,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 LCDDisplay::LCDDisplay(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::LCDDisplay)
-{
+    ui(new Ui::LCDDisplay) {
     ui->setupUi(this);
 
     #ifdef Q_OS_MACOS
@@ -34,34 +33,21 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     connect(ui->propertiesArea, &PropertiesArea::interpolationFilterChangeRequested, this, &LCDDisplay::interpolationFilterChangeRequested);
 }
 
-void LCDDisplay::updateTime(const int seconds)
-{
-    ui->timeArea->updateTime(seconds);
+void LCDDisplay::onElapsedTimeChanged(const int elapsedTimeSeconds) {
+    ui->timeArea->updateTime(elapsedTimeSeconds);
 }
 
-void LCDDisplay::setSongTitle(const QString songTitle)
-{
-    ui->titleArea->setSongTitle(songTitle);
-}
-
-void LCDDisplay::setRepeatMode(const RepeatMode repeatMode)
-{
-    ui->propertiesArea->setRepeatMode(repeatMode);
-}
-
-void LCDDisplay::setSongDuration(const size_t songDurationSeconds)
-{
-    ui->titleArea->setSongDuration(songDurationSeconds);
-}
-
-LCDDisplay::~LCDDisplay() {
-    delete SevenSegment;
-    delete InterFont;
-    delete ui;
+void LCDDisplay::onTrackTitleChanged(const QString trackTitle) {
+    ui->titleArea->setTitle(trackTitle);
 }
 
 void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
     ui->propertiesArea->setRepeatMode(repeatMode);
+}
+
+void LCDDisplay::onTrackDurationChanged(const size_t trackDurationSeconds)
+{
+    ui->titleArea->setSongDuration(trackDurationSeconds);
 }
 
 void LCDDisplay::onEqStateChanged(const bool activated) {
@@ -76,7 +62,6 @@ void LCDDisplay::onAmigaFilterChanged(const AmigaFilter amigaFilter) {
     ui->propertiesArea->setAmigaFilter(amigaFilter);
 }
 
-
 void LCDDisplay::onInterpolationFilterChanged(const InterpolationFilter interpolationFilter) {
     ui->propertiesArea->setInterpolationFilter(interpolationFilter);
 }
@@ -86,4 +71,10 @@ void LCDDisplay::refreshStyleSheet() {
     QString textStyle = QString("color:%1;").arg(textColor.hex().c_str());
     QString style = QString("background-color:%1; color:%2;").arg(backgroundColor.hex().c_str(), textColor.hex().c_str());
     setStyleSheet(style);
+}
+
+LCDDisplay::~LCDDisplay() {
+    delete SevenSegment;
+    delete InterFont;
+    delete ui;
 }

@@ -27,10 +27,6 @@ class LCDDisplay : public QWidget, public TextColorProperties
 
 public:
     explicit LCDDisplay(QWidget *parent = nullptr);
-    void updateTime(const int seconds);
-    void setSongTitle(const QString songTitle);
-    void setRepeatMode(const RepeatMode repeatMode);
-    void setSongDuration(const size_t songDurationSeconds);
     ~LCDDisplay();
 
 signals:
@@ -46,6 +42,9 @@ public slots:
     void onDSPStateChanged(const bool activated);
     void onAmigaFilterChanged(const AmigaFilter amigaFilter);
     void onInterpolationFilterChanged(const InterpolationFilter interpolationFilter);
+    void onElapsedTimeChanged(const int elapsedTimeSeconds);
+    void onTrackTitleChanged(const QString songTitle);
+    void onTrackDurationChanged(const size_t songDurationSeconds);
 
 private:
     Ui::LCDDisplay *ui;

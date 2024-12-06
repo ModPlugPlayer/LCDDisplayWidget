@@ -44,8 +44,8 @@ TitleArea::TitleArea(QWidget *parent)
     ui->song->setFont(*InterFont);
 }
 
-void TitleArea::setSongTitle(const QString &songTitle) {
-    ui->title->setText(songTitle);
+void TitleArea::setTitle(const QString &title) {
+    ui->title->setText(title);
 }
 
 TitleArea::~TitleArea()
