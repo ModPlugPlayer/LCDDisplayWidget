@@ -76,17 +76,25 @@ void TitleArea::setSongDuration(const size_t songDurationSeconds) {
 }
 
 void TitleArea::setCurrentPattern(const size_t currentPattern) {
-
+    ui->currentPatternDigit1->setText(QString::number(currentPattern%10));
+    ui->currentPatternDigit2->setText(QString::number(currentPattern/10%10));
+    ui->currentPatternDigit3->setText(QString::number(currentPattern/100));
 }
 
 void TitleArea::setCurrentSubSong(const size_t currentSubSong) {
-
+    ui->currentSubSongDigit1->setText(QString::number(currentSubSong%10));
+    ui->currentSubSongDigit2->setText(QString::number(currentSubSong/10%10));
+    ui->currentSubSongDigit3->setText(QString::number(currentSubSong/100));
 }
 
 void TitleArea::setSubSongAmount(const size_t subSongAmount) {
-
+    ui->subSongAmountDigit1->setText(QString::number(subSongAmount%10));
+    ui->subSongAmountDigit2->setText(QString::number(subSongAmount/10%10));
+    ui->subSongAmountDigit3->setText(QString::number(subSongAmount/100));
 }
 
 void TitleArea::setPatternAmount(const size_t patternAmount) {
-
+    ui->patternAmountDigit1->setText(QString::number(patternAmount%10));
+    ui->patternAmountDigit2->setText(QString::number(patternAmount/10%10));
+    ui->patternAmountDigit3->setText(QString::number(patternAmount/100));
 }

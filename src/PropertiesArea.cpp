@@ -24,7 +24,7 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     ui->activeChannelAmountDigit2->setFont(*SevenSegment);
     ui->channelAmountDigit1->setFont(*SevenSegment);
     ui->channelAmountDigit2->setFont(*SevenSegment);
-    ui->frequency->setFont(*SevenSegment);
+    ui->sampleRate->setFont(*SevenSegment);
     ui->bitRate->setFont(*SevenSegment);
 
     ui->repeatMode->setFont(*InterFont);
@@ -125,9 +125,10 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
     }
 }
 
-void PropertiesArea::setSoundResolution(const int frequency, const int bitRate, const ChannelMode channelMode)
-{
-
+void PropertiesArea::setSoundResolution(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
+    setSampleRate(sampleRate);
+    setBitRate(bitRate);
+    setChannelMode(channelMode);
 }
 
 void PropertiesArea::setChannelAmount(const size_t channelAmount) {
@@ -165,6 +166,70 @@ void PropertiesArea::setChannelMode(const ChannelMode channelMode)
         break;
     }
     ui->channelMode->setText(channelModeString);
+}
+
+void PropertiesArea::setSampleRate(const SampleRate sampleRate) {
+    QString sampleRateString;
+    switch (sampleRate) {
+    case SampleRate::Hz8000:
+        sampleRateString = "08";
+        break;
+    case SampleRate::Hz9600:
+        sampleRateString = "09";
+        break;
+    case SampleRate::Hz11025:
+        sampleRateString = "11";
+        break;
+    case SampleRate::Hz12000:
+        sampleRateString = "12";
+        break;
+    case SampleRate::Hz16000:
+        sampleRateString = "16";
+        break;
+    case SampleRate::Hz22050:
+        sampleRateString = "22";
+        break;
+    case SampleRate::Hz24000:
+        sampleRateString = "24";
+        break;
+    case SampleRate::Hz32000:
+        sampleRateString = "32";
+        break;
+    case SampleRate::Hz44100:
+        sampleRateString = "44";
+        break;
+    case SampleRate::Hz48000:
+        sampleRateString = "48";
+        break;
+    case SampleRate::Hz88200:
+        sampleRateString = "88";
+        break;
+    case SampleRate::Hz96000:
+        sampleRateString = "96";
+        break;
+    case SampleRate::Hz192000:
+        sampleRateString = "192";
+        break;
+    }
+    ui->sampleRate->setText(sampleRateString);
+}
+
+void PropertiesArea::setBitRate(const BitRate bitRate) {
+    QString bitRateString;
+    switch(bitRate) {
+    case BitRate::Bits8:
+        bitRateString = "8";
+        break;
+    case BitRate::Bits16:
+        bitRateString = "16";
+        break;
+    case BitRate::Bits24:
+        bitRateString = "24";
+        break;
+    case BitRate::Bits32:
+        bitRateString = "32";
+        break;
+    }
 }
 
 void PropertiesArea::setModuleFormat(const QString moduleFormat) {

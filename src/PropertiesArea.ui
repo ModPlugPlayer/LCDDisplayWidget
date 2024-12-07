@@ -30,7 +30,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="ClickableLabel" name="frequency">
+    <widget class="ClickableLabel" name="sampleRate">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -389,7 +389,7 @@
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
+      <string notr="true">margin-top: -2px;</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -423,7 +423,7 @@
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
+      <string notr="true">margin-top: -2px;</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -491,7 +491,7 @@
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
+      <string notr="true">margin-top: -2px;</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -525,7 +525,7 @@
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
+      <string notr="true">margin-top: -2px;</string>
      </property>
      <property name="text">
       <string>0</string>

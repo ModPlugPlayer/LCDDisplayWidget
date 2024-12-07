@@ -66,158 +66,25 @@ font-size: 2ex;
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="0" column="6">
-       <widget class="QLabel" name="of">
+      <item row="0" column="8">
+       <widget class="QLabel" name="subSongAmountDigit2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string> of </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="currentSubSongDigit3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="5">
-       <widget class="QLabel" name="currentSubSongDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="17">
-       <widget class="QLabel" name="patternAmountDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="13">
-       <widget class="QLabel" name="currentPatternDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="24">
-       <widget class="QLabel" name="s">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>s</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="10">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+        <property name="minimumSize">
          <size>
-          <width>40</width>
-          <height>5</height>
+          <width>8</width>
+          <height>10</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item row="0" column="4">
-       <widget class="QLabel" name="currentSubSongDigit2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
         </property>
         <property name="font">
          <font/>
@@ -229,7 +96,29 @@ font-size: 2ex;
          <string>0</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="21">
+       <widget class="QLabel" name="songDurationColon">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: -5px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -249,13 +138,25 @@ font-size: 2ex;
         </property>
        </spacer>
       </item>
-      <item row="0" column="11">
-       <widget class="QLabel" name="currentPatternDigit3">
+      <item row="0" column="5">
+       <widget class="QLabel" name="currentSubSongDigit1">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
         </property>
         <property name="font">
          <font/>
@@ -267,17 +168,246 @@ font-size: 2ex;
          <string>0</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="song">
+      <item row="0" column="3">
+       <widget class="QLabel" name="currentSubSongDigit3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="10">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="7">
+       <widget class="QLabel" name="subSongAmountDigit3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="16">
+       <widget class="QLabel" name="patternAmountDigit2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="13">
+       <widget class="QLabel" name="currentPatternDigit1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="11">
+       <widget class="QLabel" name="currentPatternDigit3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="9">
+       <widget class="QLabel" name="subSongAmountDigit1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; </string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="QLabel" name="of">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>19</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>19</width>
+          <height>10</height>
+         </size>
         </property>
         <property name="font">
          <font/>
@@ -286,10 +416,82 @@ font-size: 2ex;
          <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
-         <string>SONG</string>
+         <string> of </string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="20">
+       <widget class="QLabel" name="songDurationMinuteDigit1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferAntialias</stylestrategy>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; </string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="22">
+       <widget class="QLabel" name="songDurationSecondDigit2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferAntialias</stylestrategy>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; </string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
         </property>
        </widget>
       </item>
@@ -301,6 +503,18 @@ font-size: 2ex;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>5</width>
+          <height>10</height>
+         </size>
+        </property>
         <property name="font">
          <font/>
         </property>
@@ -309,6 +523,232 @@ font-size: 2ex;
         </property>
         <property name="text">
          <string>/</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="currentSubSongDigit2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="17">
+       <widget class="QLabel" name="patternAmountDigit1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="12">
+       <widget class="QLabel" name="currentPatternDigit2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="19">
+       <widget class="QLabel" name="songDurationMinuteDigit2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferAntialias</stylestrategy>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; </string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>15</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="18">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="15">
+       <widget class="QLabel" name="patternAmountDigit3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>8</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="24">
+       <widget class="QLabel" name="s">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
+        </property>
+        <property name="text">
+         <string>s</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -341,206 +781,6 @@ font-size: 2ex;
         </property>
        </widget>
       </item>
-      <item row="0" column="19">
-       <widget class="QLabel" name="songDurationMinuteDigit2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="18">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Policy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>5</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="20">
-       <widget class="QLabel" name="songDurationMinuteDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="12">
-       <widget class="QLabel" name="currentPatternDigit2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="15">
-       <widget class="QLabel" name="patternAmountDigit3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="7">
-       <widget class="QLabel" name="subSongAmountDigit3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="23">
-       <widget class="QLabel" name="songDurationSecondDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>7</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Policy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>15</width>
-          <height>5</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="0" column="0">
        <spacer name="horizontalSpacer_topLeft">
         <property name="orientation">
@@ -557,8 +797,8 @@ font-size: 2ex;
         </property>
        </spacer>
       </item>
-      <item row="0" column="8">
-       <widget class="QLabel" name="subSongAmountDigit2">
+      <item row="0" column="1">
+       <widget class="QLabel" name="song">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -569,18 +809,18 @@ font-size: 2ex;
          <font/>
         </property>
         <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+         <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string>SONG</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="0" column="22">
-       <widget class="QLabel" name="songDurationSecondDigit2">
+      <item row="0" column="23">
+       <widget class="QLabel" name="songDurationSecondDigit1">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -589,93 +829,29 @@ font-size: 2ex;
         </property>
         <property name="minimumSize">
          <size>
-          <width>7</width>
+          <width>8</width>
           <height>10</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>7</width>
+          <width>8</width>
           <height>10</height>
          </size>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <stylestrategy>PreferAntialias</stylestrategy>
+         </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+         <string notr="true">margin-top: 0px; </string>
         </property>
         <property name="text">
          <string>0</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="21">
-       <widget class="QLabel" name="songDurationColon">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: -5px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="16">
-       <widget class="QLabel" name="patternAmountDigit2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="9">
-       <widget class="QLabel" name="subSongAmountDigit1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
         </property>
        </widget>
       </item>

@@ -49,7 +49,7 @@ public slots:
     void onCurrentSubSongChanged(const size_t currentSubSong);
     void onSubSongAmountChanged(const size_t subSongAmount);
     void onModuleFormatChanged(const QString moduleFormat);
-    void onSoundResolutionChanged(const int frequency,const int bitRate, const ChannelMode channelMode);
+    void onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode);
     void onSongDurationChanged(const size_t songDurationSeconds);
     void onCurrentPatternChanged(const size_t currentPattern);
     void onPatternAmountChanged(const size_t patternAmount);

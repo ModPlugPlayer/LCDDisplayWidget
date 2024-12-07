@@ -65,8 +65,8 @@ void LCDDisplay::onModuleFormatChanged(const QString moduleFormat) {
     ui->propertiesArea->setModuleFormat(moduleFormat);
 }
 
-void LCDDisplay::onSoundResolutionChanged(const int frequency, const int bitRate, const ChannelMode channelMode) {
-    ui->propertiesArea->setSoundResolution(frequency, bitRate, channelMode);
+void LCDDisplay::onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
+    ui->propertiesArea->setSoundResolution(sampleRate, bitRate, channelMode);
 }
 
 void LCDDisplay::onSongDurationChanged(const size_t songDurationSeconds) {
