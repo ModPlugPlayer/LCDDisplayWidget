@@ -20,8 +20,10 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     SevenSegment = new QFont("Seven Segment", 11, QFont::Normal);
     InterFont = new QFont("Inter", 10, QFont::Normal);
 
-    ui->activeChannelAmount->setFont(*SevenSegment);
-    ui->channelAmount->setFont(*SevenSegment);
+    ui->activeChannelAmountDigit1->setFont(*SevenSegment);
+    ui->activeChannelAmountDigit2->setFont(*SevenSegment);
+    ui->channelAmountDigit1->setFont(*SevenSegment);
+    ui->channelAmountDigit2->setFont(*SevenSegment);
     ui->frequency->setFont(*SevenSegment);
     ui->bitRate->setFont(*SevenSegment);
 
@@ -123,13 +125,20 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
     }
 }
 
-void PropertiesArea::setChannelAmount(const int channelAmount) {
-    ui->channelAmount->setText(QString::number(channelAmount).rightJustified(2, '0'));
+void PropertiesArea::setSoundResolution(const int frequency, const int bitRate, const ChannelMode channelMode)
+{
+
 }
 
-void PropertiesArea::setActiveChannelAmount(const int channelAmount)
+void PropertiesArea::setChannelAmount(const size_t channelAmount) {
+    ui->channelAmountDigit1->setText(QString::number(channelAmount%10));
+    ui->channelAmountDigit2->setText(QString::number(channelAmount/10));
+}
+
+void PropertiesArea::setActiveChannelAmount(const size_t activeChannelAmount)
 {
-    ui->activeChannelAmount->setText(QString::number(channelAmount).rightJustified(2, '0'));
+    ui->activeChannelAmountDigit1->setText(QString::number(activeChannelAmount%10));
+    ui->activeChannelAmountDigit1->setText(QString::number(activeChannelAmount/10));
 }
 
 void PropertiesArea::setChannelMode(const ChannelMode channelMode)
@@ -158,8 +167,7 @@ void PropertiesArea::setChannelMode(const ChannelMode channelMode)
     ui->channelMode->setText(channelModeString);
 }
 
-void PropertiesArea::setModuleFormat(const QString moduleFormat)
-{
+void PropertiesArea::setModuleFormat(const QString moduleFormat) {
     ui->moduleFormat->setText(moduleFormat);
 }
 

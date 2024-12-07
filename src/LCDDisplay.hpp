@@ -42,9 +42,18 @@ public slots:
     void onDSPStateChanged(const bool activated);
     void onAmigaFilterChanged(const AmigaFilter amigaFilter);
     void onInterpolationFilterChanged(const InterpolationFilter interpolationFilter);
-    void onElapsedTimeChanged(const int elapsedTimeSeconds);
+    void onElapsedTimeChanged(const size_t elapsedTimeSeconds);
     void onTrackTitleChanged(const QString songTitle);
     void onTrackDurationChanged(const size_t songDurationSeconds);
+    void onActiveChannelAmountChanged(const size_t activeChannelAmount);
+    void onCurrentSubSongChanged(const size_t currentSubSong);
+    void onSubSongAmountChanged(const size_t subSongAmount);
+    void onModuleFormatChanged(const QString moduleFormat);
+    void onSoundResolutionChanged(const int frequency,const int bitRate, const ChannelMode channelMode);
+    void onSongDurationChanged(const size_t songDurationSeconds);
+    void onCurrentPatternChanged(const size_t currentPattern);
+    void onPatternAmountChanged(const size_t patternAmount);
+    void onChannelAmountChanged(const size_t channelAmount);
 
 private:
     Ui::LCDDisplay *ui;

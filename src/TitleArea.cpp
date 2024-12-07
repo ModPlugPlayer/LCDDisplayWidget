@@ -27,16 +27,24 @@ TitleArea::TitleArea(QWidget *parent)
     InterFont = new QFont("Inter", 11, QFont::Normal);
     SongTitleFont = new QFont("Inter", 19, QFont::Normal);
     ui->title->setFont(*SongTitleFont);
-    ui->subSong->setFont(*SevenSegment);
-    ui->subSongAmount->setFont(*SevenSegment);
-    ui->songDuration_colon->setFont(*SevenSegment);
-    ui->pattern->setFont(*SevenSegment);
-    ui->pattern_3->setFont(*SevenSegment);
+    ui->subSongAmountDigit1->setFont(*SevenSegment);
+    ui->subSongAmountDigit2->setFont(*SevenSegment);
+    ui->subSongAmountDigit3->setFont(*SevenSegment);
+    ui->currentSubSongDigit1->setFont(*SevenSegment);
+    ui->currentSubSongDigit2->setFont(*SevenSegment);
+    ui->currentSubSongDigit3->setFont(*SevenSegment);
+    ui->songDurationColon->setFont(*SevenSegment);
+    ui->patternAmountDigit1->setFont(*SevenSegment);
+    ui->patternAmountDigit2->setFont(*SevenSegment);
+    ui->patternAmountDigit3->setFont(*SevenSegment);
+    ui->currentPatternDigit1->setFont(*SevenSegment);
+    ui->currentPatternDigit2->setFont(*SevenSegment);
+    ui->currentPatternDigit3->setFont(*SevenSegment);
 
-    ui->songDuration_minute1->setFont(*SevenSegment);
-    ui->songDuration_minute2->setFont(*SevenSegment);
-    ui->songDuration_second1->setFont(*SevenSegment);
-    ui->songDuration_second2->setFont(*SevenSegment);
+    ui->songDurationMinuteDigit1->setFont(*SevenSegment);
+    ui->songDurationMinuteDigit2->setFont(*SevenSegment);
+    ui->songDurationSecondDigit1->setFont(*SevenSegment);
+    ui->songDurationSecondDigit2->setFont(*SevenSegment);
 
     ui->s->setFont(*InterFont);
     ui->of->setFont(*InterFont);
@@ -57,8 +65,28 @@ TitleArea::~TitleArea()
 }
 
 void TitleArea::setSongDuration(const size_t songDurationSeconds) {
-    QString text = QStringLiteral("%1:%2").arg(songDurationSeconds/60, 2, 10, QLatin1Char('0')).arg(songDurationSeconds%60, 2, 10, QLatin1Char('0'));
+    //QString text = QStringLiteral("%1:%2").arg(songDurationSeconds/60, 2, 10, QLatin1Char('0')).arg(songDurationSeconds%60, 2, 10, QLatin1Char('0'));
     //text.sprintf("%02d:%02ds", songDurationSeconds/60, songDurationSeconds%60);
 
-    ui->songDuration_second2->setText(text);
+    ui->songDurationSecondDigit1->setText(QString::number(songDurationSeconds%60%10));
+    ui->songDurationSecondDigit2->setText(QString::number(songDurationSeconds%60/10));
+
+    ui->songDurationMinuteDigit1->setText(QString::number(songDurationSeconds/60%10));
+    ui->songDurationMinuteDigit2->setText(QString::number(songDurationSeconds/60/10));
+}
+
+void TitleArea::setCurrentPattern(const size_t currentPattern) {
+
+}
+
+void TitleArea::setCurrentSubSong(const size_t currentSubSong) {
+
+}
+
+void TitleArea::setSubSongAmount(const size_t subSongAmount) {
+
+}
+
+void TitleArea::setPatternAmount(const size_t patternAmount) {
+
 }

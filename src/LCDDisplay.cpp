@@ -33,7 +33,7 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     connect(ui->propertiesArea, &PropertiesArea::interpolationFilterChangeRequested, this, &LCDDisplay::interpolationFilterChangeRequested);
 }
 
-void LCDDisplay::onElapsedTimeChanged(const int elapsedTimeSeconds) {
+void LCDDisplay::onElapsedTimeChanged(const size_t elapsedTimeSeconds) {
     ui->timeArea->updateTime(elapsedTimeSeconds);
 }
 
@@ -45,9 +45,44 @@ void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::onTrackDurationChanged(const size_t trackDurationSeconds)
-{
+void LCDDisplay::onTrackDurationChanged(const size_t trackDurationSeconds) {
     ui->titleArea->setSongDuration(trackDurationSeconds);
+}
+
+void LCDDisplay::onActiveChannelAmountChanged(const size_t activeChannelAmount) {
+    ui->propertiesArea->setActiveChannelAmount(activeChannelAmount);
+}
+
+void LCDDisplay::onCurrentSubSongChanged(const size_t currentSubSong) {
+    ui->titleArea->setCurrentSubSong(currentSubSong);
+}
+
+void LCDDisplay::onSubSongAmountChanged(const size_t subSongAmount) {
+    ui->titleArea->setSubSongAmount(subSongAmount);
+}
+
+void LCDDisplay::onModuleFormatChanged(const QString moduleFormat) {
+    ui->propertiesArea->setModuleFormat(moduleFormat);
+}
+
+void LCDDisplay::onSoundResolutionChanged(const int frequency, const int bitRate, const ChannelMode channelMode) {
+    ui->propertiesArea->setSoundResolution(frequency, bitRate, channelMode);
+}
+
+void LCDDisplay::onSongDurationChanged(const size_t songDurationSeconds) {
+    ui->titleArea->setSongDuration(songDurationSeconds);
+}
+
+void LCDDisplay::onCurrentPatternChanged(const size_t currentPattern) {
+    ui->titleArea->setCurrentPattern(currentPattern);
+}
+
+void LCDDisplay::onPatternAmountChanged(const size_t patternAmount) {
+    ui->titleArea->setPatternAmount(patternAmount);
+}
+
+void LCDDisplay::onChannelAmountChanged(const size_t channelAmount) {
+    ui->propertiesArea->setChannelAmount(channelAmount);
 }
 
 void LCDDisplay::onEqStateChanged(const bool activated) {

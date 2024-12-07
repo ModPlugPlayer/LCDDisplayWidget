@@ -27,6 +27,10 @@ public:
     ~TitleArea();
 
     void setSongDuration(const size_t songDurationSeconds);
+    void setCurrentPattern(const size_t currentPattern);
+    void setCurrentSubSong(const size_t currentSubSong);
+    void setSubSongAmount(const size_t subSongAmount);
+    void setPatternAmount(const size_t patternAmount);
 private:
     Ui::TitleArea *ui;
     QFont *SevenSegment;

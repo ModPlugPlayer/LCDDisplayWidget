@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -366,7 +366,7 @@
     </spacer>
    </item>
    <item>
-    <widget class="ClickableLabel" name="activeChannelAmount">
+    <widget class="ClickableLabel" name="activeChannelAmountDigit2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -375,14 +375,14 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>14</width>
-       <height>0</height>
+       <width>7</width>
+       <height>10</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>14</width>
-       <height>16777215</height>
+       <width>7</width>
+       <height>10</height>
       </size>
      </property>
      <property name="font">
@@ -392,7 +392,41 @@
       <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>00</string>
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ClickableLabel" name="activeChannelAmountDigit1">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>7</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>7</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">margin-top: -1px;</string>
+     </property>
+     <property name="text">
+      <string>0</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
@@ -409,13 +443,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>5</width>
+       <width>4</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>5</width>
+       <width>4</width>
        <height>16777215</height>
       </size>
      </property>
@@ -429,12 +463,12 @@
       <string>/</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="ClickableLabel" name="channelAmount">
+    <widget class="ClickableLabel" name="channelAmountDigit1">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -443,14 +477,14 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>15</width>
-       <height>0</height>
+       <width>7</width>
+       <height>10</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>15</width>
-       <height>16777215</height>
+       <width>7</width>
+       <height>10</height>
       </size>
      </property>
      <property name="font">
@@ -460,12 +494,62 @@
       <string notr="true">margin-top: -1px;</string>
      </property>
      <property name="text">
-      <string>00</string>
+      <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <widget class="ClickableLabel" name="channelAmountDigit2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>7</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>7</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">margin-top: -1px;</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>2</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="ClickableLabel" name="chn">

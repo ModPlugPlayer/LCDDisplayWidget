@@ -31,9 +31,9 @@ public:
     void setDSPState(const bool enabled);
     void setAmigaFilter(const AmigaFilter amigaFilter);
     void setInterpolationFilter(const InterpolationFilter interpolationFilter);
-    void setSoundResolution(const int frequency,const int bitRate, ChannelMode channelMode);
-    void setChannelAmount(const int channelAmount);
-    void setActiveChannelAmount(const int channelAmount);
+    void setSoundResolution(const int frequency,const int bitRate, const ChannelMode channelMode);
+    void setChannelAmount(const size_t channelAmount);
+    void setActiveChannelAmount(const size_t activeChannelAmount);
     void setChannelMode(const ChannelMode channelMode);
     void setModuleFormat(const QString moduleFormat);
     ~PropertiesArea();
