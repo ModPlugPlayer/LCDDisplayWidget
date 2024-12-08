@@ -139,7 +139,7 @@ void PropertiesArea::setChannelAmount(const size_t channelAmount) {
 void PropertiesArea::setActiveChannelAmount(const size_t activeChannelAmount)
 {
     ui->activeChannelAmountDigit1->setText(QString::number(activeChannelAmount%10));
-    ui->activeChannelAmountDigit1->setText(QString::number(activeChannelAmount/10));
+    ui->activeChannelAmountDigit2->setText(QString::number(activeChannelAmount/10));
 }
 
 void PropertiesArea::setChannelMode(const ChannelMode channelMode)
