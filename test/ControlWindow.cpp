@@ -11,7 +11,7 @@ You should have received a copy of the GNU Lesser General Public License along w
 
 #include "ControlWindow.hpp"
 #include "ui_ControlWindow.h"
-#include <PlayList.hpp>
+#include <Interfaces/PlayList.hpp>
 
 ControlWindow::ControlWindow(QWidget *parent) :
     QDialog(parent),
@@ -27,18 +27,12 @@ ControlWindow::ControlWindow(QWidget *parent) :
 
     connect(this, &ControlWindow::repeatModeChanged, ui->display, &LCDDisplay::onRepeatModeChanged);
     connect(this, &ControlWindow::eqStateChanged, ui->display, &LCDDisplay::onEqStateChanged);
-    connect(this, &ControlWindow::agcStateChanged, ui->display, &LCDDisplay::onAGCStateChanged);
-    connect(this, &ControlWindow::xBassStateChanged, ui->display, &LCDDisplay::onXBassStateChanged);
-    connect(this, &ControlWindow::surroundStateChanged, ui->display, &LCDDisplay::onSurroundStateChanged);
-    connect(this, &ControlWindow::reverbStateChanged, ui->display, &LCDDisplay::onReverbStateChanged);
+    connect(this, &ControlWindow::dspStateChanged, ui->display, &LCDDisplay::onDSPStateChanged);
     connect(this, &ControlWindow::interpolationFilterChanged, ui->display, &LCDDisplay::onInterpolationFilterChanged);
 
     connect(ui->display, &LCDDisplay::repeatModeChangeRequested, this, &ControlWindow::repeatModeChangeRequested);
     connect(ui->display, &LCDDisplay::eqStateChangeRequested, this, &ControlWindow::onEqStateChangeRequested);
-    connect(ui->display, &LCDDisplay::agcStateChangeRequested, this, &ControlWindow::onAGCStateChangeRequested);
-    connect(ui->display, &LCDDisplay::xBassStateChangeRequested, this, &ControlWindow::onXBassStateChangeRequested);
-    connect(ui->display, &LCDDisplay::surroundStateChangeRequested, this, &ControlWindow::onSurroundStateChangeRequested);
-    connect(ui->display, &LCDDisplay::reverbStateChangeRequested, this, &ControlWindow::onReverbStateChangeRequested);
+    connect(ui->display, &LCDDisplay::dspStateChangeRequested, this, &ControlWindow::onDSPStateChangeRequested);
     connect(ui->display, &LCDDisplay::interpolationFilterChangeRequested, this, &ControlWindow::onInterpolationFilterChangeRequested);
     ui->playlistButton->click();
 }
@@ -79,9 +73,14 @@ void ControlWindow::onLoaded(std::filesystem::path filePath, bool successfull) {
     playingMode = PlayingMode::SingleTrack;
 }
 
+void ControlWindow::onLoaded(const ModuleFileInfo fileInfo, const bool successfull)
+{
+
+}
+
 void ControlWindow::onLoaded(PlayListItem playListItem, bool successfull) {
     playingMode = PlayingMode::PlayList;
-    ui->display->setSongTitle(playListItem.filePath.filename().c_str());
+    emit trackTitleChanged(playListItem.filePath.filename().c_str());
     emit loaded(playListItem, successfull);
 }
 
@@ -165,30 +164,22 @@ void ControlWindow::onEqStateChangeRequested(const bool activated) {
     emit eqStateChanged(activated);
 }
 
-void ControlWindow::onAGCStateChangeRequested(const bool activated) {
-    agcEnabled = activated;
-    emit agcStateChanged(activated);
+void ControlWindow::onDSPStateChangeRequested(const bool activated) {
+    dspEnabled = activated;
+    emit dspStateChanged(activated);
 }
 
-void ControlWindow::onXBassStateChangeRequested(const bool activated) {
-    xBassEnabled = activated;
-    emit xBassStateChanged(activated);
+void ControlWindow::onAmigaFilterChangeRequested(const AmigaFilter amigaFilter) {
 
-}
-
-void ControlWindow::onSurroundStateChangeRequested(const bool activated) {
-    surroundEnabled = activated;
-    emit surroundStateChanged(activated);
-}
-
-void ControlWindow::onReverbStateChangeRequested(const bool activated) {
-    reverbEnabled = activated;
-    emit reverbStateChanged(activated);
 }
 
 void ControlWindow::onInterpolationFilterChangeRequested(const InterpolationFilter interpolationFilter) {
     this->interpolationFilter = interpolationFilter;
     emit interpolationFilterChanged(interpolationFilter);
+}
+
+void ControlWindow::onRepeatModeChanged(const RepeatMode repeatMode) {
+
 }
 
 void ControlWindow::onAlwaysOnTopStateChangeRequested(bool alwaysOnTop) {

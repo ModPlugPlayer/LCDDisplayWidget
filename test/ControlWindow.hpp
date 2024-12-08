@@ -12,15 +12,17 @@ You should have received a copy of the GNU General Public License along with thi
 #pragma once
 
 #include <QDialog>
-#include <Player.hpp>
-
+#include <Interfaces/Player.hpp>
+#include <Interfaces/ModulePlayer.hpp>
 namespace Ui {
 class ControlWindow;
 }
 
 using namespace ModPlugPlayer;
 
-class ControlWindow : public QDialog, public ModPlugPlayer::Player
+class ControlWindow : public QDialog,
+                      public ModPlugPlayer::Interfaces::Player,
+                      public ModPlugPlayer::Interfaces::ModulePlayer
 {
     Q_OBJECT
 
@@ -50,12 +52,10 @@ signals:
     void volumeChangeRequested(const int volume) override;
     void timeScrubbingRequested(const int position) override;
     void repeatModeChangeRequested(const ModPlugPlayer::RepeatMode repeatMode) override;
-    void agcStateChangeRequested(const bool activated) override;
-    void xBassStateChangeRequested(const bool activated) override;
-    void surroundStateChangeRequested(const bool activated) override;
-    void reverbStateChangeRequested(const bool activated) override;
-    void interpolationFilterChangeRequested(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
     void eqStateChangeRequested(const bool activated) override;
+    void dspStateChangeRequested(const bool activated) override;
+    void amigaFilterChangeRequested(const AmigaFilter amigaFilter) override;
+    void interpolationFilterChangeRequested(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
     void alwaysOnTopStateChangeRequested(const bool alwaysOnTop) override;
     void titleBarHidingStateChangeRequested(const bool hide) override;
     void snappingToViewPortStateChangeRequested(const bool toBeSnappedToViewPort) override;
@@ -78,46 +78,51 @@ signals:
     void timeScrubbed(const int position) override;
     void repeatModeChanged(const ModPlugPlayer::RepeatMode repeat) override;
     void eqStateChanged(const bool activated) override;
-    void agcStateChanged(const bool activated) override;
-    void xBassStateChanged(const bool activated) override;
-    void surroundStateChanged(const bool activated) override;
-    void reverbStateChanged(const bool activated) override;
+    void dspStateChanged(const bool activated) override;
+    void amigaFilterChanged(const AmigaFilter amigaFilter) override;
     void interpolationFilterChanged(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
     void alwaysOnTopStateChanged(const bool alwaysOnTop) override;
     void titleBarHidingStateChanged(const bool hide) override;
     void snappingToViewPortStateChanged(const bool snapToViewPort) override;
     void keepingStayingInViewPortStateChanged(const bool toBeKeptStayingInViewPort) override;
 
+    //Song signals
+    void elapsedTimeChanged(const int seconds) override;
+    void trackDurationChanged(const size_t songDurationSeconds) override;
+    void trackTitleChanged(const QString songTitle) override;
+
 public slots:
     // Request Signal Handlers
     void onOpenRequested(const std::filesystem::path filePath) override;
     void onOpenRequested(const PlayListItem playListItem) override;
-    void onLoaded(std::filesystem::path filePath, bool successfull) override;
-    void onLoaded(PlayListItem playListItem, bool successfull) override;
+    void onLoaded(const std::filesystem::path filePath, const bool successfull) override;
+    void onLoaded(const ModuleFileInfo fileInfo, const bool successfull); //Temporary, will be removed
+    void onLoaded(const PlayListItem playListItem, bool successfull) override;
     void onStopRequested() override;
-    void onStopRequested(PlayListItem playListItem) override;
+    void onStopRequested(const PlayListItem playListItem) override;
     void onPlayRequested() override;
-    void onPlayRequested(PlayListItem playListItem) override;
+    void onPlayRequested(const PlayListItem playListItem) override;
     void onPauseRequested() override;
-    void onPauseRequested(PlayListItem playListItem) override;
+    void onPauseRequested(const PlayListItem playListItem) override;
     void onResumeRequested() override;
-    void onResumeRequested(PlayListItem playListItem) override;
-    void onVolumeChangeRequested(int volume) override;
-    void onTimeScrubbingRequested(int position) override;
-    void onAlwaysOnTopStateChangeRequested(bool alwaysOnTop) override;
-    void onTitleBarHidingStateChangeRequested(bool hide) override;
-    void onSnappingToViewPortStateChangeRequested(bool snapToViewPort) override;
-    void onSnappingThresholdChangeRequested(int snappingThreshold) override;
-    void onKeepingStayingInViewPortStateChangeRequested(bool keepStayingInViewPort) override;
+    void onResumeRequested(const PlayListItem playListItem) override;
+    void onVolumeChangeRequested(const int volume) override;
+    void onTimeScrubbingRequested(const int position) override;
+    void onAlwaysOnTopStateChangeRequested(const bool alwaysOnTop) override;
+    void onTitleBarHidingStateChangeRequested(const bool hide) override;
+    void onSnappingToViewPortStateChangeRequested(const bool snapToViewPort) override;
+    void onSnappingThresholdChangeRequested(const int snappingThreshold) override;
+    void onKeepingStayingInViewPortStateChangeRequested(const bool keepStayingInViewPort) override;
     void onPreviousRequested() override;
     void onNextRequested() override;
-    void onRepeatModeChangeRequested(ModPlugPlayer::RepeatMode repeatMode) override;
+    void onRepeatModeChangeRequested(const ModPlugPlayer::RepeatMode repeatMode) override;
     void onEqStateChangeRequested(const bool activated) override;
-    void onAGCStateChangeRequested(const bool activated) override;
-    void onXBassStateChangeRequested(const bool activated) override;
-    void onSurroundStateChangeRequested(const bool activated) override;
-    void onReverbStateChangeRequested(const bool activated) override;
+    void onDSPStateChangeRequested(const bool activated) override;
+    void onAmigaFilterChangeRequested(const AmigaFilter amigaFilter) override;
     void onInterpolationFilterChangeRequested(const ModPlugPlayer::InterpolationFilter interpolationFilter) override;
+
+    //Response Signal Handlers
+    void onRepeatModeChanged(const RepeatMode repeatMode) override;
 
 private slots:
     void on_previousButton_clicked();
@@ -135,7 +140,7 @@ private:
     RepeatMode repeatMode = RepeatMode::NoRepeat;
     InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
     bool eqEnabled = false;
-    bool agcEnabled = false;
+    bool dspEnabled = false;
     bool xBassEnabled = false;
     bool surroundEnabled = false;
     bool reverbEnabled = false;
