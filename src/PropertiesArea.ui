@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -52,14 +52,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>44</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -86,14 +83,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>kHz</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
    </item>
@@ -136,14 +130,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>16</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -186,14 +177,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Bit</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
    </item>
@@ -223,29 +211,42 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>36</width>
+       <width>34</width>
        <height>10</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>36</width>
+       <width>34</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Stereo</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_7">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>2</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="ClickableLabel" name="dspState">
@@ -257,29 +258,42 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>24</width>
+       <width>22</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>24</width>
+       <width>22</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>DSP</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>2</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="ClickableLabel" name="eqState">
@@ -291,29 +305,42 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>18</width>
+       <width>14</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>24</width>
+       <width>14</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>EQ</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_8">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>4</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="ClickableLabel" name="repeatMode">
@@ -338,14 +365,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Repeat</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
      </property>
     </widget>
    </item>
@@ -388,14 +412,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -2px;</string>
-     </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -422,14 +443,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -2px;</string>
-     </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -456,14 +474,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>/</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -490,14 +505,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -2px;</string>
-     </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -524,14 +536,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -2px;</string>
-     </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -574,14 +583,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Chn</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -608,14 +614,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>MPTM</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -658,14 +661,11 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Sinc Int.</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
    </item>
@@ -692,16 +692,29 @@
      <property name="font">
       <font/>
      </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px;</string>
-     </property>
      <property name="text">
       <string>Amiga 500</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>3</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
