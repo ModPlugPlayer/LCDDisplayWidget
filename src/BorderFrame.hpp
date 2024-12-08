@@ -1,5 +1,5 @@
 /*
-TitleArea class declarations of ModPlug Player
+BorderFrame class declarations of ModPlug Player
 Copyright (C) 2024 Volkan Orhan
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -12,23 +12,19 @@ You should have received a copy of the GNU General Public License along with thi
 #pragma once
 
 #include <QWidget>
+#include <QFont>
+#include <QFrame>
+#include <RGB.hpp>
 
-namespace Ui {
-class TitleArea;
-}
-
-class TitleArea : public QWidget
-{
+class BorderFrame: public QFrame {
     Q_OBJECT
 
 public:
-    explicit TitleArea(QWidget *parent = nullptr);
-    void setTitle(const QString &title);
-    ~TitleArea();
-
+    void paintEvent(QPaintEvent *event) override;
+    void setBorderColor(RGB borderColor);
+public:
+    BorderFrame(QWidget *parent = nullptr);
+    ~BorderFrame(void) override;
 private:
-    Ui::TitleArea *ui;
-    QFont *SevenSegment;
-    QFont *InterFont;
-    QFont *SongTitleFont;
+    RGB borderColor;
 };

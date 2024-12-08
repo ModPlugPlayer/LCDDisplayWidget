@@ -9,9 +9,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef TIMEAREA_HPP
-#define TIMEAREA_HPP
-
+#pragma once
 #include <QWidget>
 #include <QFont>
 
@@ -33,5 +31,3 @@ private:
     QFont *SevenSegment;
     QFont *InterFont;
 };
-
-#endif // TIMEAREA_HPP

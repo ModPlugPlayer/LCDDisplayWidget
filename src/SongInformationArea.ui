@@ -47,7 +47,7 @@ background-color: rgba(255, 255, 255, 0);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>3</width>
+       <width>6</width>
        <height>5</height>
       </size>
      </property>
@@ -65,7 +65,7 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>SONG</string>
@@ -115,13 +115,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -149,13 +149,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -183,13 +183,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -201,29 +201,14 @@ background-color: rgba(255, 255, 255, 0);
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>19</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>19</width>
-       <height>10</height>
-      </size>
-     </property>
      <property name="font">
       <font/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string> of </string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -251,13 +236,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -285,13 +270,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -319,13 +304,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; </string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -366,13 +351,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -400,13 +385,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -434,13 +419,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -452,23 +437,8 @@ background-color: rgba(255, 255, 255, 0);
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>5</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>5</width>
-       <height>10</height>
-      </size>
-     </property>
      <property name="font">
       <font/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
      </property>
      <property name="text">
       <string>/</string>
@@ -502,13 +472,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -536,13 +506,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -570,13 +540,13 @@ background-color: rgba(255, 255, 255, 0);
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; /*Should be negative or zero*/</string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -622,13 +592,13 @@ background-color: rgba(255, 255, 255, 0);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; </string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -658,13 +628,13 @@ background-color: rgba(255, 255, 255, 0);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; </string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -690,9 +660,6 @@ background-color: rgba(255, 255, 255, 0);
      </property>
      <property name="font">
       <font/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">margin-top: -3px;</string>
      </property>
      <property name="text">
       <string>:</string>
@@ -728,13 +695,13 @@ background-color: rgba(255, 255, 255, 0);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; </string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -764,13 +731,13 @@ background-color: rgba(255, 255, 255, 0);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: 0px; </string>
+      <string notr="true">margin-bottom: 2px,;</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -782,29 +749,17 @@ background-color: rgba(255, 255, 255, 0);
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>7</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>7</width>
-       <height>10</height>
-      </size>
-     </property>
      <property name="font">
       <font/>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -1px; /*Should be negative or zero*/</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>s</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -818,7 +773,7 @@ background-color: rgba(255, 255, 255, 0);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>3</width>
+       <width>6</width>
        <height>5</height>
       </size>
      </property>

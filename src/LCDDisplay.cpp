@@ -46,7 +46,7 @@ void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
 }
 
 void LCDDisplay::onTrackDurationChanged(const size_t trackDurationSeconds) {
-    ui->titleArea->setSongDuration(trackDurationSeconds);
+    ui->songInformationArea->setSongDuration(trackDurationSeconds);
 }
 
 void LCDDisplay::onActiveChannelAmountChanged(const size_t activeChannelAmount) {
@@ -54,11 +54,11 @@ void LCDDisplay::onActiveChannelAmountChanged(const size_t activeChannelAmount) 
 }
 
 void LCDDisplay::onCurrentSubSongChanged(const size_t currentSubSong) {
-    ui->titleArea->setCurrentSubSong(currentSubSong);
+    ui->songInformationArea->setCurrentSubSong(currentSubSong);
 }
 
 void LCDDisplay::onSubSongAmountChanged(const size_t subSongAmount) {
-    ui->titleArea->setSubSongAmount(subSongAmount);
+    ui->songInformationArea->setSubSongAmount(subSongAmount);
 }
 
 void LCDDisplay::onModuleFormatChanged(const QString moduleFormat) {
@@ -70,15 +70,15 @@ void LCDDisplay::onSoundResolutionChanged(const SampleRate sampleRate, const Bit
 }
 
 void LCDDisplay::onSongDurationChanged(const size_t songDurationSeconds) {
-    ui->titleArea->setSongDuration(songDurationSeconds);
+    ui->songInformationArea->setSongDuration(songDurationSeconds);
 }
 
 void LCDDisplay::onCurrentPatternChanged(const size_t currentPattern) {
-    ui->titleArea->setCurrentPattern(currentPattern);
+    ui->songInformationArea->setCurrentPattern(currentPattern);
 }
 
 void LCDDisplay::onPatternAmountChanged(const size_t patternAmount) {
-    ui->titleArea->setPatternAmount(patternAmount);
+    ui->songInformationArea->setPatternAmount(patternAmount);
 }
 
 void LCDDisplay::onChannelAmountChanged(const size_t channelAmount) {
@@ -106,6 +106,7 @@ void LCDDisplay::refreshStyleSheet() {
     QString textStyle = QString("color:%1;").arg(textColor.hex().c_str());
     QString style = QString("background-color:%1; color:%2;").arg(backgroundColor.hex().c_str(), textColor.hex().c_str());
     setStyleSheet(style);
+    ui->titleBorder->setBorderColor(textColor);
 }
 
 LCDDisplay::~LCDDisplay() {
