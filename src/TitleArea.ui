@@ -108,11 +108,23 @@ font-size: 2ex;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>4</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>4</width>
+          <height>10</height>
+         </size>
+        </property>
         <property name="font">
          <font/>
         </property>
         <property name="styleSheet">
-         <string notr="true">margin-top: -5px; /*Should be negative or zero*/</string>
+         <string notr="true">margin-top: -3px;</string>
         </property>
         <property name="text">
          <string>:</string>
@@ -741,6 +753,18 @@ font-size: 2ex;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>7</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>7</width>
+          <height>10</height>
+         </size>
+        </property>
         <property name="font">
          <font/>
         </property>
@@ -751,7 +775,7 @@ font-size: 2ex;
          <string>s</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
         </property>
        </widget>
       </item>
