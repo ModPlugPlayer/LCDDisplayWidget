@@ -54,6 +54,7 @@ private:
     void onAmigaFilterDoubleClicked();
     void onInterpolationFilterDoubleClicked();
     bool eqEnabled = false, dspEnabled = false;
+    size_t activeChannelAmountDigit1PreviousValue = 0, activeChannelAmountDigit2PreviousValue = 0;
     RepeatMode repeatMode = RepeatMode::NoRepeat;
     InterpolationFilter interpolationFilter = InterpolationFilter::NoInterpolation;
     AmigaFilter amigaFilter = AmigaFilter::Amiga500;
