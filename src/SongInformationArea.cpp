@@ -7,9 +7,12 @@ SongInformationArea::SongInformationArea(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowOpacity(0);
-    SevenSegment = new QFont("Seven Segment", 12, QFont::Normal);
-    InterFont = new QFont("Inter", 11, QFont::Normal);
-    SongTitleFont = new QFont("Inter", 19, QFont::Normal);
+    SevenSegment = new QFont("Seven Segment", QFont::Normal);
+    SevenSegment->setPixelSize(12);
+    InterFont = new QFont("Inter", QFont::Normal);
+    InterFont->setPixelSize(11);
+    SongTitleFont = new QFont("Inter", QFont::Normal);
+    SongTitleFont->setPixelSize(19);
     //ui->title->setFont(*SongTitleFont);
 
     ui->subSongAmountDigit1->setFont(*SevenSegment);

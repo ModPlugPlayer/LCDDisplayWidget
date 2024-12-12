@@ -23,8 +23,10 @@ TimeArea::TimeArea(QWidget *parent)
         setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea, false);
     #endif
 
-    SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
-    InterFont = new QFont("Inter", 11, QFont::Normal);
+    SevenSegment = new QFont("Seven Segment", QFont::Light);
+    SevenSegment->setPixelSize(25);
+    InterFont = new QFont("Inter", QFont::Normal);
+    InterFont->setPixelSize(11);
     ui->secondDigit1->setFont(*SevenSegment);
     ui->secondDigit2->setFont(*SevenSegment);
     ui->minuteDigit1->setFont(*SevenSegment);

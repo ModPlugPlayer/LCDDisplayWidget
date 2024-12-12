@@ -24,8 +24,10 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
         setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea, false);
     #endif
 
-    SevenSegment = new QFont("Seven Segment", 25, QFont::Light);
-    InterFont = new QFont("Inter", 20, QFont::Normal);
+    SevenSegment = new QFont("Seven Segment", QFont::Light);
+    SevenSegment->setPixelSize(25);
+    InterFont = new QFont("Inter", QFont::Normal);
+    InterFont->setPixelSize(20);
     connect(ui->propertiesArea, &PropertiesArea::repeatModeChangeRequested, this, &LCDDisplay::repeatModeChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
     connect(ui->propertiesArea, &PropertiesArea::dspStateChangeRequested, this, &LCDDisplay::dspStateChangeRequested);

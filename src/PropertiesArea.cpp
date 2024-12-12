@@ -17,8 +17,10 @@ PropertiesArea::PropertiesArea(QWidget *parent)
     , ui(new Ui::PropertiesArea) {
     ui->setupUi(this);
 
-    SevenSegment = new QFont("Seven Segment", 11, QFont::Normal);
-    InterFont = new QFont("Inter", 10, QFont::Normal);
+    SevenSegment = new QFont("Seven Segment", QFont::Normal);
+    SevenSegment->setPixelSize(11);
+    InterFont = new QFont("Inter", QFont::Normal);
+    InterFont->setPixelSize(10);
 
     ui->activeChannelAmountDigit1->setFont(*SevenSegment);
     ui->activeChannelAmountDigit2->setFont(*SevenSegment);
