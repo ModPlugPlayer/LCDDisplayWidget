@@ -22,6 +22,8 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     #ifdef Q_OS_MACOS
         //Makes this component seem under the transparent titlebar correctly
         setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea, false);
+        ui->songInformationArea->setMinimumHeight(ui->songInformationArea->minimumHeight()-1);
+        ui->songInformationArea->setMaximumHeight(ui->songInformationArea->maximumHeight()-1);
     #endif
 
     SevenSegment = new QFont("Seven Segment", QFont::Light);

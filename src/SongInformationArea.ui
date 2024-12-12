@@ -16,7 +16,9 @@
   <property name="styleSheet">
    <string notr="true">.QWidget {
 background-color: rgba(255, 255, 255, 0);
-}</string>
+}
+
+</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -56,13 +58,27 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="song">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>36</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>36</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
@@ -94,7 +110,7 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="currentSubSongDigit3">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -102,13 +118,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -118,14 +134,14 @@ background-color: rgba(255, 255, 255, 0);
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="currentSubSongDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -133,30 +149,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="currentSubSongDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -164,33 +182,47 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="of">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>15</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>15</width>
+       <height>16777215</height>
+      </size>
      </property>
      <property name="font">
       <font/>
@@ -206,7 +238,7 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="subSongAmountDigit3">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -214,30 +246,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="subSongAmountDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -245,30 +279,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="subSongAmountDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -276,23 +312,25 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -312,7 +350,7 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="currentPatternDigit3">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -320,30 +358,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="currentPatternDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -351,30 +391,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="currentPatternDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -382,30 +424,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="slash">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -413,13 +457,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>7</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>7</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -429,14 +473,14 @@ background-color: rgba(255, 255, 255, 0);
       <string>/</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="patternAmountDigit3">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -444,30 +488,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="patternAmountDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -475,30 +521,32 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="patternAmountDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -506,23 +554,25 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
-      <font/>
+      <font>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="text">
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -545,7 +595,7 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="songDurationMinuteDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -553,13 +603,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -571,14 +621,14 @@ background-color: rgba(255, 255, 255, 0);
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="songDurationMinuteDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -586,13 +636,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -604,7 +654,7 @@ background-color: rgba(255, 255, 255, 0);
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -630,7 +680,7 @@ background-color: rgba(255, 255, 255, 0);
    <item>
     <widget class="QLabel" name="songDurationSecondDigit2">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -638,13 +688,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -656,14 +706,14 @@ background-color: rgba(255, 255, 255, 0);
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="songDurationSecondDigit1">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -671,13 +721,13 @@ background-color: rgba(255, 255, 255, 0);
      <property name="minimumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>8</width>
-       <height>10</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -689,17 +739,29 @@ background-color: rgba(255, 255, 255, 0);
       <string>0</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="s">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>7</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>7</width>
+       <height>16777215</height>
+      </size>
      </property>
      <property name="font">
       <font/>
@@ -711,7 +773,7 @@ background-color: rgba(255, 255, 255, 0);
       <string>s</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
