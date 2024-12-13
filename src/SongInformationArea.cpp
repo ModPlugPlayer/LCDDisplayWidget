@@ -52,16 +52,17 @@ void SongInformationArea::setSongDuration(const size_t songDurationSeconds) {
 
 }
 
-void SongInformationArea::setCurrentPattern(const size_t currentPattern) {
-    ui->currentPatternDigit1->setText(QString::number(currentPattern%10));
-    ui->currentPatternDigit2->setText(QString::number(currentPattern/10%10));
-    ui->currentPatternDigit3->setText(QString::number(currentPattern/100));
+void SongInformationArea::setCurrentPattern(const size_t currentPatternIndex) {
+    ui->currentPatternDigit1->setText(QString::number(currentPatternIndex%10));
+    ui->currentPatternDigit2->setText(QString::number(currentPatternIndex/10%10));
+    ui->currentPatternDigit3->setText(QString::number(currentPatternIndex/100));
 }
 
-void SongInformationArea::setCurrentSubSong(const size_t currentSubSong) {
-    ui->currentSubSongDigit1->setText(QString::number(currentSubSong%10));
-    ui->currentSubSongDigit2->setText(QString::number(currentSubSong/10%10));
-    ui->currentSubSongDigit3->setText(QString::number(currentSubSong/100));
+void SongInformationArea::setCurrentSubSong(const size_t currentSubSongIndex) {
+    size_t currentSubSongNumber = currentSubSongIndex+1;
+    ui->currentSubSongDigit1->setText(QString::number(currentSubSongNumber%10));
+    ui->currentSubSongDigit2->setText(QString::number(currentSubSongNumber/10%10));
+    ui->currentSubSongDigit3->setText(QString::number(currentSubSongNumber/100));
 }
 
 void SongInformationArea::setSubSongAmount(const size_t subSongAmount) {
