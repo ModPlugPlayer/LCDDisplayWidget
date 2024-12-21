@@ -48,7 +48,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">margin-top: -2px;</string>
+      <string notr="true">margin-top: -3px;</string>
      </property>
      <property name="lineWidth">
       <number>0</number>

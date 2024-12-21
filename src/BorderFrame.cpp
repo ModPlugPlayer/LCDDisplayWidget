@@ -25,7 +25,7 @@ void BorderFrame::paintEvent(QPaintEvent *event)
     painter.setPen(QColor(borderColor.red, borderColor.green, borderColor.blue));
     int width = size().width();
     int height = size().height();
-    painter.drawRect(2,8, width-6, height-10);
+    painter.drawRect(2,7, width-6, height-8);
     QFrame::paintEvent(event);
 }
 
