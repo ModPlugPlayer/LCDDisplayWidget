@@ -30,4 +30,6 @@ private:
     Ui::TimeArea *ui;
     QFont *SevenSegment;
     QFont *InterFont;
+    int min=0;
+    int sec=0;
 };

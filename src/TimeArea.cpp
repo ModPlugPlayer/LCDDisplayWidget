@@ -38,11 +38,12 @@ TimeArea::TimeArea(QWidget *parent)
 
 void TimeArea::updateTime(int seconds)
 {
-    ui->minuteDigit1->setText(QString::number(seconds/600));
-    ui->minuteDigit2->setText(QString::number(seconds/60));
-    ui->secondDigit1->setText(QString::number((seconds%60)/10));
-    ui->secondDigit2->setText(QString::number((seconds%60)%10));
-
+    sec = seconds%60;
+    min = seconds/60;
+    ui->secondDigit1->setText(QString::number(sec/10));
+    ui->secondDigit2->setText(QString::number(sec%10));
+    ui->minuteDigit1->setText(QString::number((min/10)%10));
+    ui->minuteDigit2->setText(QString::number(min%10));
 }
 
 TimeArea::~TimeArea()
