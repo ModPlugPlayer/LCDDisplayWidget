@@ -11,6 +11,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 #include "PropertiesArea.hpp"
 #include "ui_PropertiesArea.h"
+#include <MessageCenter.hpp>
 
 PropertiesArea::PropertiesArea(QWidget *parent)
     : QWidget(parent)
@@ -255,23 +256,23 @@ PropertiesArea::~PropertiesArea() {
 void PropertiesArea::onRepeatDoubleClicked()
 {
     RepeatMode currentRepeatMode = this->repeatMode;
-    emit repeatModeChangeRequested(currentRepeatMode++);
+    emit MessageCenter::getInstance().repeatModeChangeRequested(currentRepeatMode++);
 }
 
 void PropertiesArea::onEqDoubleClicked() {
-    emit eqStateChangeRequested(!eqEnabled);
+    emit MessageCenter::getInstance().eqStateChangeRequested(!eqEnabled);
 }
 
 void PropertiesArea::onDSPDoubleClicked() {
-    emit dspStateChangeRequested(!dspEnabled);
+    emit MessageCenter::getInstance().dspStateChangeRequested(!dspEnabled);
 }
 
 void PropertiesArea::onAmigaFilterDoubleClicked() {
     AmigaFilter currentAmigaFilter = amigaFilter;
-    emit amigaFilterChangeRequested(currentAmigaFilter++);
+    emit MessageCenter::getInstance().amigaFilterChangeRequested(currentAmigaFilter++);
 }
 
 void PropertiesArea::onInterpolationFilterDoubleClicked() {
     InterpolationFilter currentInterpolationFilter = this->interpolationFilter;
-    emit interpolationFilterChangeRequested(currentInterpolationFilter++);
+    emit MessageCenter::getInstance().interpolationFilterChangeRequested(currentInterpolationFilter++);
 }

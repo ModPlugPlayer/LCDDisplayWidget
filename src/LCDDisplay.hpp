@@ -29,13 +29,6 @@ public:
     explicit LCDDisplay(QWidget *parent = nullptr);
     ~LCDDisplay();
 
-signals:
-    void repeatModeChangeRequested(const RepeatMode repeatMode);
-    void eqStateChangeRequested(const bool activated);
-    void dspStateChangeRequested(const bool activated);
-    void amigaFilterChangeRequested(const AmigaFilter amigaFilter);
-    void interpolationFilterChangeRequested(const InterpolationFilter interpolationFilter);
-
 public slots:
     void onRepeatModeChanged(const RepeatMode repeatMode);
     void onEqStateChanged(const bool activated);

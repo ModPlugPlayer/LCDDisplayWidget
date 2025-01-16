@@ -30,11 +30,6 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     SevenSegment->setPixelSize(25);
     InterFont = new QFont("Inter", QFont::Normal);
     InterFont->setPixelSize(20);
-    connect(ui->propertiesArea, &PropertiesArea::repeatModeChangeRequested, this, &LCDDisplay::repeatModeChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::eqStateChangeRequested, this, &LCDDisplay::eqStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::dspStateChangeRequested, this, &LCDDisplay::dspStateChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::amigaFilterChangeRequested, this, &LCDDisplay::amigaFilterChangeRequested);
-    connect(ui->propertiesArea, &PropertiesArea::interpolationFilterChangeRequested, this, &LCDDisplay::interpolationFilterChangeRequested);
 }
 
 void LCDDisplay::onElapsedTimeChanged(const size_t elapsedTimeSeconds) {

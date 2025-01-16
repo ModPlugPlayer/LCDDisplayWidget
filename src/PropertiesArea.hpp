@@ -40,12 +40,6 @@ public:
     void setModuleFormat(const QString moduleFormat);
     ~PropertiesArea();
 
-signals:
-    void repeatModeChangeRequested(const RepeatMode repeatMode);
-    void eqStateChangeRequested(const bool activated);
-    void dspStateChangeRequested(const bool activated);
-    void amigaFilterChangeRequested(const AmigaFilter amigaFilter);
-    void interpolationFilterChangeRequested(const InterpolationFilter interpolationFilter);
 private:
     Ui::PropertiesArea *ui;
     void onRepeatDoubleClicked();
