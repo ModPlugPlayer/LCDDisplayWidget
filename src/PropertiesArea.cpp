@@ -256,23 +256,23 @@ PropertiesArea::~PropertiesArea() {
 void PropertiesArea::onRepeatDoubleClicked()
 {
     RepeatMode currentRepeatMode = this->repeatMode;
-    emit MessageCenter::getInstance().repeatModeChangeRequested(currentRepeatMode++);
+    emit MessageCenter::getInstance().requests.songRequests.repeatModeChangeRequested(currentRepeatMode++);
 }
 
 void PropertiesArea::onEqDoubleClicked() {
-    emit MessageCenter::getInstance().eqStateChangeRequested(!eqEnabled);
+    emit MessageCenter::getInstance().requests.soundRequests.eqStateChangeRequested(!eqEnabled);
 }
 
 void PropertiesArea::onDSPDoubleClicked() {
-    emit MessageCenter::getInstance().dspStateChangeRequested(!dspEnabled);
+    emit MessageCenter::getInstance().requests.soundRequests.dspStateChangeRequested(!dspEnabled);
 }
 
 void PropertiesArea::onAmigaFilterDoubleClicked() {
     AmigaFilter currentAmigaFilter = amigaFilter;
-    emit MessageCenter::getInstance().amigaFilterChangeRequested(currentAmigaFilter++);
+    emit MessageCenter::getInstance().requests.soundRequests.amigaFilterChangeRequested(currentAmigaFilter++);
 }
 
 void PropertiesArea::onInterpolationFilterDoubleClicked() {
     InterpolationFilter currentInterpolationFilter = this->interpolationFilter;
-    emit MessageCenter::getInstance().interpolationFilterChangeRequested(currentInterpolationFilter++);
+    emit MessageCenter::getInstance().requests.soundRequests.interpolationFilterChangeRequested(currentInterpolationFilter++);
 }
