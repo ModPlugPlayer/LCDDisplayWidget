@@ -269,10 +269,10 @@ void PropertiesArea::onDSPDoubleClicked() {
 
 void PropertiesArea::onAmigaFilterDoubleClicked() {
     AmigaFilter currentAmigaFilter = amigaFilter;
-    emit MessageCenter::getInstance().requests.soundRequests.amigaFilterChangeRequested(currentAmigaFilter++);
+    emit MessageCenter::getInstance().requests.moduleRequests.amigaFilterChangeRequested(currentAmigaFilter++);
 }
 
 void PropertiesArea::onInterpolationFilterDoubleClicked() {
     InterpolationFilter currentInterpolationFilter = this->interpolationFilter;
-    emit MessageCenter::getInstance().requests.soundRequests.interpolationFilterChangeRequested(currentInterpolationFilter++);
+    emit MessageCenter::getInstance().requests.moduleRequests.interpolationFilterChangeRequested(currentInterpolationFilter++);
 }
