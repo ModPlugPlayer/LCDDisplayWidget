@@ -55,10 +55,10 @@ void PropertiesArea::setRepeatMode(const RepeatMode repeatMode) {
     case RepeatMode::NoRepeat:
         ui->repeatMode->setText("");
     break;
-    case RepeatMode::RepeatTrack:
+    case RepeatMode::RepeatSong:
         ui->repeatMode->setText("Repeat");
     break;
-    case RepeatMode::LoopTrack:
+    case RepeatMode::LoopSong:
         ui->repeatMode->setText("Loop");
         break;
     case RepeatMode::RepeatPlayList:

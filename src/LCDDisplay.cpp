@@ -36,16 +36,16 @@ void LCDDisplay::onElapsedTimeChanged(const size_t elapsedTimeSeconds) {
     ui->timeArea->updateTime(elapsedTimeSeconds);
 }
 
-void LCDDisplay::onTrackTitleChanged(const QString trackTitle) {
-    ui->titleArea->setTitle(trackTitle);
+void LCDDisplay::onSongTitleChanged(const QString songTitle) {
+    ui->titleArea->setTitle(songTitle);
 }
 
 void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
     ui->propertiesArea->setRepeatMode(repeatMode);
 }
 
-void LCDDisplay::onTrackDurationChanged(const size_t trackDurationSeconds) {
-    ui->songInformationArea->setSongDuration(trackDurationSeconds);
+void LCDDisplay::onSongDurationChanged(const size_t songDurationSeconds) {
+    ui->songInformationArea->setSongDuration(songDurationSeconds);
 }
 
 void LCDDisplay::onActiveChannelAmountChanged(const size_t activeChannelAmount) {
@@ -66,10 +66,6 @@ void LCDDisplay::onModuleFormatChanged(const QString moduleFormat) {
 
 void LCDDisplay::onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
     ui->propertiesArea->setSoundResolution(sampleRate, bitRate, channelMode);
-}
-
-void LCDDisplay::onSongDurationChanged(const size_t songDurationSeconds) {
-    ui->songInformationArea->setSongDuration(songDurationSeconds);
 }
 
 void LCDDisplay::onCurrentPatternChanged(const size_t currentPattern) {
