@@ -13,6 +13,7 @@ You should have received a copy of the GNU General Public License along with thi
 #include "ui_LCDDisplay.h"
 #include <QFile>
 #include <QDebug>
+#include <MessageCenter.hpp>
 
 LCDDisplay::LCDDisplay(QWidget *parent) :
     QWidget(parent),
@@ -30,14 +31,34 @@ LCDDisplay::LCDDisplay(QWidget *parent) :
     SevenSegment->setPixelSize(25);
     InterFont = new QFont("Inter", QFont::Normal);
     InterFont->setPixelSize(20);
+    connectSignalsAndSlots();
+}
+
+void LCDDisplay::connectSignalsAndSlots() {
+    connect(&MessageCenter::getInstance().events.songEvents, &MessageCenterEvents::SongEvents::songTitleChanged, this, &LCDDisplay::onSongTitleChanged);
+    connect(&MessageCenter::getInstance().events.songEvents, &MessageCenterEvents::SongEvents::elapsedTimeChanged, this, &LCDDisplay::onElapsedTimeChanged);
+    connect(&MessageCenter::getInstance().events.songEvents, &MessageCenterEvents::SongEvents::repeatModeChanged, this, &LCDDisplay::onRepeatModeChanged);
+    connect(&MessageCenter::getInstance().events.songEvents, &MessageCenterEvents::SongEvents::songDurationChanged, this, &LCDDisplay::onSongDurationChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::activeChannelAmountChanged, this, &LCDDisplay::onActiveChannelAmountChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::currentSubSongIndexChanged, this, &LCDDisplay::onCurrentSubSongIndexChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::subSongAmountChanged, this, &LCDDisplay::onSubSongAmountChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::moduleFormatChanged, this, &LCDDisplay::onModuleFormatChanged);
+    connect(&MessageCenter::getInstance().events.soundEvents, &MessageCenterEvents::SoundEvents::soundResolutionChanged, this, &LCDDisplay::onSoundResolutionChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::currentPatternIndexChanged, this, &LCDDisplay::onCurrentPatternIndexChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::patternAmountChanged, this, &LCDDisplay::onPatternAmountChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::channelAmountChanged, this, &LCDDisplay::onChannelAmountChanged);
+    connect(&MessageCenter::getInstance().events.soundEvents, &MessageCenterEvents::SoundEvents::eqStateChanged, this, &LCDDisplay::onEqStateChanged);
+    connect(&MessageCenter::getInstance().events.soundEvents, &MessageCenterEvents::SoundEvents::dspStateChanged, this, &LCDDisplay::onDSPStateChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::amigaFilterChanged, this, &LCDDisplay::onAmigaFilterChanged);
+    connect(&MessageCenter::getInstance().events.moduleEvents, &MessageCenterEvents::ModuleEvents::interpolationFilterChanged, this, &LCDDisplay::onInterpolationFilterChanged);
 }
 
 void LCDDisplay::onElapsedTimeChanged(const size_t elapsedTimeSeconds) {
     ui->timeArea->updateTime(elapsedTimeSeconds);
 }
 
-void LCDDisplay::onSongTitleChanged(const QString songTitle) {
-    ui->titleArea->setTitle(songTitle);
+void LCDDisplay::onSongTitleChanged(const std::string songTitle) {
+    ui->titleArea->setTitle(QString::fromStdString(songTitle));
 }
 
 void LCDDisplay::onRepeatModeChanged(const RepeatMode repeatMode) {
@@ -52,24 +73,24 @@ void LCDDisplay::onActiveChannelAmountChanged(const size_t activeChannelAmount) 
     ui->propertiesArea->setActiveChannelAmount(activeChannelAmount);
 }
 
-void LCDDisplay::onCurrentSubSongChanged(const size_t currentSubSong) {
-    ui->songInformationArea->setCurrentSubSong(currentSubSong);
+void LCDDisplay::onCurrentSubSongIndexChanged(const size_t currentSubSongIndex) {
+    ui->songInformationArea->setCurrentSubSongIndex(currentSubSongIndex);
 }
 
 void LCDDisplay::onSubSongAmountChanged(const size_t subSongAmount) {
     ui->songInformationArea->setSubSongAmount(subSongAmount);
 }
 
-void LCDDisplay::onModuleFormatChanged(const QString moduleFormat) {
-    ui->propertiesArea->setModuleFormat(moduleFormat);
+void LCDDisplay::onModuleFormatChanged(const std::string moduleFormat) {
+    ui->propertiesArea->setModuleFormat(QString::fromStdString(moduleFormat));
 }
 
 void LCDDisplay::onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
     ui->propertiesArea->setSoundResolution(sampleRate, bitRate, channelMode);
 }
 
-void LCDDisplay::onCurrentPatternChanged(const size_t currentPattern) {
-    ui->songInformationArea->setCurrentPattern(currentPattern);
+void LCDDisplay::onCurrentPatternIndexChanged(const size_t currentPatternIndex) {
+    ui->songInformationArea->setCurrentPatternIndex(currentPatternIndex);
 }
 
 void LCDDisplay::onPatternAmountChanged(const size_t patternAmount) {

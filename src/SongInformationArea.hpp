@@ -15,8 +15,8 @@ public:
     ~SongInformationArea();
 
     void setSongDuration(const size_t songDurationSeconds);
-    void setCurrentPattern(const size_t currentPatternIndex);
-    void setCurrentSubSong(const size_t currentSubSongIndex);
+    void setCurrentPatternIndex(const size_t currentPatternIndex);
+    void setCurrentSubSongIndex(const size_t currentSubSongIndex);
     void setSubSongAmount(const size_t subSongAmount);
     void setPatternAmount(const size_t patternAmount);
 

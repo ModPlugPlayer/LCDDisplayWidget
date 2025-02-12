@@ -36,14 +36,14 @@ public slots:
     void onAmigaFilterChanged(const AmigaFilter amigaFilter);
     void onInterpolationFilterChanged(const InterpolationFilter interpolationFilter);
     void onElapsedTimeChanged(const size_t elapsedTimeSeconds);
-    void onSongTitleChanged(const QString songTitle);
+    void onSongTitleChanged(const std::string songTitle);
     void onSongDurationChanged(const size_t songDurationSeconds);
     void onActiveChannelAmountChanged(const size_t activeChannelAmount);
-    void onCurrentSubSongChanged(const size_t currentSubSong);
+    void onCurrentSubSongIndexChanged(const size_t currentSubSong);
     void onSubSongAmountChanged(const size_t subSongAmount);
-    void onModuleFormatChanged(const QString moduleFormat);
+    void onModuleFormatChanged(const std::string moduleFormat);
     void onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode);
-    void onCurrentPatternChanged(const size_t currentPattern);
+    void onCurrentPatternIndexChanged(const size_t currentPatternIndex);
     void onPatternAmountChanged(const size_t patternAmount);
     void onChannelAmountChanged(const size_t channelAmount);
 
@@ -54,4 +54,5 @@ private:
 
 protected:
     void refreshStyleSheet() override;
+    void connectSignalsAndSlots();
 };
