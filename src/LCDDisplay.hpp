@@ -42,7 +42,7 @@ public slots:
     void onCurrentSubSongIndexChanged(const size_t currentSubSong);
     void onSubSongAmountChanged(const size_t subSongAmount);
     void onModuleFormatChanged(const std::string moduleFormat);
-    void onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode);
+    void onSoundResolutionChanged(const SoundResolution soundResolution);
     void onCurrentPatternIndexChanged(const size_t currentPatternIndex);
     void onPatternAmountChanged(const size_t patternAmount);
     void onChannelAmountChanged(const size_t channelAmount);

@@ -85,8 +85,8 @@ void LCDDisplay::onModuleFormatChanged(const std::string moduleFormat) {
     ui->propertiesArea->setModuleFormat(QString::fromStdString(moduleFormat));
 }
 
-void LCDDisplay::onSoundResolutionChanged(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
-    ui->propertiesArea->setSoundResolution(sampleRate, bitRate, channelMode);
+void LCDDisplay::onSoundResolutionChanged(const SoundResolution soundResolution) {
+    ui->propertiesArea->setSoundResolution(soundResolution);
 }
 
 void LCDDisplay::onCurrentPatternIndexChanged(const size_t currentPatternIndex) {

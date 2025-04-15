@@ -128,10 +128,10 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
     }
 }
 
-void PropertiesArea::setSoundResolution(const SampleRate sampleRate, const BitRate bitRate, const ChannelMode channelMode) {
-    setSampleRate(sampleRate);
-    setBitRate(bitRate);
-    setChannelMode(channelMode);
+void PropertiesArea::setSoundResolution(const SoundResolution soundResolution) {
+    setSampleRate(soundResolution.sampleRate);
+    setBitRate(soundResolution.bitRate);
+    setChannelMode(soundResolution.channelMode);
 }
 
 void PropertiesArea::setChannelAmount(const size_t channelAmount) {
@@ -241,6 +241,7 @@ void PropertiesArea::setBitRate(const BitRate bitRate) {
         bitRateString = "32";
         break;
     }
+    ui->bitRate->setText(bitRateString);
 }
 
 void PropertiesArea::setModuleFormat(const QString moduleFormat) {

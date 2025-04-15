@@ -31,7 +31,7 @@ public:
     void setDSPState(const bool enabled);
     void setAmigaFilter(const AmigaFilter amigaFilter);
     void setInterpolationFilter(const InterpolationFilter interpolationFilter);
-    void setSoundResolution(const SampleRate,const BitRate bitRate, const ChannelMode channelMode);
+    void setSoundResolution(const SoundResolution soundResolution);
     void setChannelAmount(const size_t channelAmount);
     void setActiveChannelAmount(const size_t activeChannelAmount);
     void setChannelMode(const ChannelMode channelMode);
