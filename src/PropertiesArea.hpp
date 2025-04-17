@@ -35,8 +35,8 @@ public:
     void setChannelAmount(const size_t channelAmount);
     void setActiveChannelAmount(const size_t activeChannelAmount);
     void setChannelMode(const ChannelMode channelMode);
-    void setSampleRate(const SampleRate sampleRate);
-    void setBitRate(const BitRate bitRate);
+    void setSamplingFrequency(const SamplingFrequency samplingFrequency);
+    void setBitDepth(const BitDepth bitDepth);
     void setModuleFormat(const QString moduleFormat);
     ~PropertiesArea();
 

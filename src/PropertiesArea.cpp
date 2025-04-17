@@ -129,8 +129,8 @@ void PropertiesArea::setInterpolationFilter(const InterpolationFilter interpolat
 }
 
 void PropertiesArea::setSoundResolution(const SoundResolution soundResolution) {
-    setSampleRate(soundResolution.sampleRate);
-    setBitRate(soundResolution.bitRate);
+    setSamplingFrequency(soundResolution.sampleRate);
+    setBitDepth(soundResolution.bitDepth);
     setChannelMode(soundResolution.channelMode);
 }
 
@@ -179,65 +179,65 @@ void PropertiesArea::setChannelMode(const ChannelMode channelMode)
     ui->channelMode->setText(channelModeString);
 }
 
-void PropertiesArea::setSampleRate(const SampleRate sampleRate) {
-    QString sampleRateString;
-    switch (sampleRate) {
-    case SampleRate::Hz8000:
-        sampleRateString = "08";
+void PropertiesArea::setSamplingFrequency(const SamplingFrequency samplingFrequency) {
+    QString samplingFrequencyString;
+    switch (samplingFrequency) {
+    case SamplingFrequency::Hz8000:
+        samplingFrequencyString = "08";
         break;
-    case SampleRate::Hz9600:
-        sampleRateString = "09";
+    case SamplingFrequency::Hz9600:
+        samplingFrequencyString = "09";
         break;
-    case SampleRate::Hz11025:
-        sampleRateString = "11";
+    case SamplingFrequency::Hz11025:
+        samplingFrequencyString = "11";
         break;
-    case SampleRate::Hz12000:
-        sampleRateString = "12";
+    case SamplingFrequency::Hz12000:
+        samplingFrequencyString = "12";
         break;
-    case SampleRate::Hz16000:
-        sampleRateString = "16";
+    case SamplingFrequency::Hz16000:
+        samplingFrequencyString = "16";
         break;
-    case SampleRate::Hz22050:
-        sampleRateString = "22";
+    case SamplingFrequency::Hz22050:
+        samplingFrequencyString = "22";
         break;
-    case SampleRate::Hz24000:
-        sampleRateString = "24";
+    case SamplingFrequency::Hz24000:
+        samplingFrequencyString = "24";
         break;
-    case SampleRate::Hz32000:
-        sampleRateString = "32";
+    case SamplingFrequency::Hz32000:
+        samplingFrequencyString = "32";
         break;
-    case SampleRate::Hz44100:
-        sampleRateString = "44";
+    case SamplingFrequency::Hz44100:
+        samplingFrequencyString = "44";
         break;
-    case SampleRate::Hz48000:
-        sampleRateString = "48";
+    case SamplingFrequency::Hz48000:
+        samplingFrequencyString = "48";
         break;
-    case SampleRate::Hz88200:
-        sampleRateString = "88";
+    case SamplingFrequency::Hz88200:
+        samplingFrequencyString = "88";
         break;
-    case SampleRate::Hz96000:
-        sampleRateString = "96";
+    case SamplingFrequency::Hz96000:
+        samplingFrequencyString = "96";
         break;
-    case SampleRate::Hz192000:
-        sampleRateString = "192";
+    case SamplingFrequency::Hz192000:
+        samplingFrequencyString = "192";
         break;
     }
-    ui->sampleRate->setText(sampleRateString);
+    ui->sampleRate->setText(samplingFrequencyString);
 }
 
-void PropertiesArea::setBitRate(const BitRate bitRate) {
+void PropertiesArea::setBitDepth(const BitDepth bitDepth) {
     QString bitRateString;
-    switch(bitRate) {
-    case BitRate::Bits8:
+    switch(bitDepth) {
+    case BitDepth::Bits8:
         bitRateString = "8";
         break;
-    case BitRate::Bits16:
+    case BitDepth::Bits16:
         bitRateString = "16";
         break;
-    case BitRate::Bits24:
+    case BitDepth::Bits24:
         bitRateString = "24";
         break;
-    case BitRate::Bits32:
+    case BitDepth::Bits32:
         bitRateString = "32";
         break;
     }
